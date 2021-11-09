@@ -109,7 +109,7 @@
           background-color: #fefefe;
           margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
           border: 1px solid #888;
-          width: 80%; /* Could be more or less, depending on screen size */
+          width: 50%; /* Could be more or less, depending on screen size */
         }
         
         /* The Close Button (x) */
@@ -184,12 +184,7 @@
                           <!-- menu start -->
                           <nav class="main-menu">
                               <ul>
-                                  <li><a href="#">Acceuil</a>
-                                      <ul class="sub-menu">
-                                          <li><a href="index.html">Film</a></li>
-                                          <li><a href="index_2.html">Serie</a></li>
-                                      </ul>
-                                  </li>
+                                  
                                   <li ><a href="#">Film</a>
                                       <ul class="sub-menu">
                                           <li><a href="index.html">Film</a></li>
@@ -314,8 +309,7 @@
                         
                         <div class="hero-btns">
                           <a href="Connexion.html" class="boxed-btn">Se Connecter</a>
-                          <a href="inscription.html" class="bordered-btn">S'inscrire</a>
-                          <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+                          <a class="bordered-btn"  onclick="document.getElementById('id01').style.display='block'" style="width:auto;">S'inscrire</a>
                       </div>
                   </div>
               </div>
@@ -327,15 +321,16 @@
       <div id="id01" class="modal">
   
         <form class="modal-content animate" action="/action_page.php" method="post">
-            <h3>Formulaire d'inscription</h3>
           <div class="imgcontainer">
             <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+           <br>
+            <h3>Formulaire d'inscription</h3>
             <img src="assets/img/img_avatar2.png" alt="Avatar" class="avatar">
           </div>
       
           <div class="container">
             <label for="pseudo"><b>Pseudo</b></label>
-            <input type="text" placeholder="Votre Pseudo" name="pseudo" required>
+            <input type="text" placeholder="Votre Pseudo" name="pseudo" required >
             
             <label for="nom"><b>Nom</b></label>
             <input type="text" placeholder="Votre Nom" name="nom" required>
@@ -347,20 +342,15 @@
             <label for="mail"><b>Email</b></label>
             <input type="text" placeholder="Votre Email" name="mail" required>
 
-            <label for="psw"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="psw" required>
-              
+            <label for="psw"><b>Mot de Passe</b></label>
+            <input type="password" placeholder="Votr Mot de Passe" name="psw" required>
+           
 
-            <button type="submit">Login</button>
-            <label>
-              <input type="checkbox" checked="checked" name="remember"> Remember me
-            </label>
+            <a type="submit" class="boxed-btn">S'inscrire</a>
+            
           </div>
       
-          <div class="container" style="background-color:#f1f1f1">
-            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-            <span class="psw">Forgot <a href="#">password?</a></span>
-          </div>
+          
         </form>
       </div>
       <!--fin modal-->

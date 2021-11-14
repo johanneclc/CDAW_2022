@@ -7,7 +7,7 @@
  Nous avons avant tout réalisé un Diagramme de cas d'usage afin de bien identifier les différentes fonctionnalités de notre site web. 
  On pourra ainsi revenir à ce diagramme tout le long du projet pour ne pas trop dériver. 
  
- Puis, nous avons discuté en binôme sur la manière de répondre au cahier des charges. Cette reflexion a été mise sur papier. 
+ Puis, nous avons réalisé un brainstorming en binôme sur la manière de répondre au cahier des charges. Cette reflexion a été mise sur papier. 
  Nous avons réalisé l'ordre de priorité des fonctionnalités. Nous avons choisi de mettre en priorité les fonctionalités liées à la connexion et à l'administration qui selon nous 
  sont primordiales car, nottamment,  elles mettent en jeu les notions de sécurité du site. Puis, nous créerons la base de données des médias afin d'intégrer les médias dans le 
  site. Nous finirons par les notions de commentaires, "j'aime", modérateurs, l'historique ... En effet , cette dernière partie sera abordée seulement lorsque les fonctionnalités 

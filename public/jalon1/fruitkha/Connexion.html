@@ -1,0 +1,451 @@
+
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="Responsive Bootstrap4 Shop Template, Created by Imran Hossain from https://imransdesign.com/">
+  
+      <!-- title -->
+      <title>Fruitkha</title>
+  
+      <!-- favicon -->
+      <link rel="shortcut icon" type="image/png" href="assets/img/favicon.png">
+      <!-- google font -->
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+      <!-- fontawesome -->
+      <link rel="stylesheet" href="assets/css/all.min.css">
+      <!-- bootstrap -->
+      <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+      <!-- owl carousel -->
+      <link rel="stylesheet" href="assets/css/owl.carousel.css">
+      <!-- magnific popup -->
+      <link rel="stylesheet" href="assets/css/magnific-popup.css">
+      <!-- animate css -->
+      <link rel="stylesheet" href="assets/css/animate.css">
+      <!-- mean menu css -->
+      <link rel="stylesheet" href="assets/css/meanmenu.min.css">
+      <!-- main style -->
+      <link rel="stylesheet" href="assets/css/main.css">
+      <!-- responsive -->
+      <link rel="stylesheet" href="assets/css/responsive.css">
+  
+      <!--STYLE-->
+      <style>
+        body {font-family: Arial, Helvetica, sans-serif;}
+        
+        /* Full-width input fields */
+        input[type=text], input[type=password] {
+          width: 100%;
+          padding: 12px 20px;
+          margin: 8px 0;
+          display: inline-block;
+          border: 1px solid #ccc;
+          box-sizing: border-box;
+        }
+        
+        /* Set a style for all buttons */
+        button {
+          background-color: #04AA6D;
+          color: white;
+          padding: 14px 20px;
+          margin: 8px 0;
+          border: none;
+          cursor: pointer;
+          width: 100%;
+        }
+        
+        button:hover {
+          opacity: 0.8;
+        }
+        
+        /* Extra styles for the cancel button */
+        .cancelbtn {
+          width: auto;
+          padding: 10px 18px;
+          background-color: #f44336;
+        }
+        
+        /* Center the image and position the close button */
+        .imgcontainer {
+          text-align: center;
+          margin: 24px 0 12px 0;
+          position: relative;
+        }
+        
+        img.avatar {
+          width: 10%;
+          border-radius: 30%;
+        }
+        
+        .container {
+          padding: 16px;
+        }
+        
+        span.psw {
+          float: right;
+          padding-top: 16px;
+        }
+        
+        /* The Modal (background) */
+        .modal {
+          display: none; /* Hidden by default */
+          position: fixed; /* Stay in place */
+          z-index: 1; /* Sit on top */
+          left: 0;
+          top: 0;
+          width: 100%; /* Full width */
+          height: 100%; /* Full height */
+          overflow: auto; /* Enable scroll if needed */
+          background-color: rgb(0,0,0); /* Fallback color */
+          background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+          padding-top: 60px;
+        }
+        
+        /* Modal Content/Box */
+        .modal-content {
+          background-color: #fefefe;
+          margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+          border: 1px solid #888;
+          width: 50%; /* Could be more or less, depending on screen size */
+        }
+        
+        /* The Close Button (x) */
+        .close {
+          position: absolute;
+          right: 25px;
+          top: 0;
+          color: #000;
+          font-size: 35px;
+          font-weight: bold;
+        }
+        
+        .close:hover,
+        .close:focus {
+          color: red;
+          cursor: pointer;
+        }
+        
+        /* Add Zoom Animation */
+        .animate {
+          -webkit-animation: animatezoom 0.6s;
+          animation: animatezoom 0.6s
+        }
+        
+        @-webkit-keyframes animatezoom {
+          from {-webkit-transform: scale(0)} 
+          to {-webkit-transform: scale(1)}
+        }
+          
+        @keyframes animatezoom {
+          from {transform: scale(0)} 
+          to {transform: scale(1)}
+        }
+        
+        /* Change styles for span and cancel button on extra small screens */
+        @media screen and (max-width: 300px) {
+          span.psw {
+             display: block;
+             float: none;
+          }
+          .cancelbtn {
+             width: 100%;
+          }
+        }
+        </style>
+      <!--Fin style-->
+  </head>
+  <body>
+      
+      <!--PreLoader-->
+      <div class="loader">
+          <div class="loader-inner">
+              <div class="circle"></div>
+          </div>
+      </div>
+      <!--PreLoader Ends-->
+      
+      <!-- header -->
+      <div class="top-header-area" id="sticker">
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-12 col-sm-12 text-center">
+                      <div class="main-menu-wrap">
+                          <!-- logo -->
+                          <div class="site-logo">
+                              <a href="index.html">
+                                  <img src="assets/img/logo.png" alt="">
+                              </a>
+                          </div>
+                          <!-- logo -->
+                                        <!-- menu start -->
+						<nav class="main-menu">
+							<ul>
+								
+								<li ><a href="#">Film</a>
+									<ul class="sub-menu">
+										<li><a href="film.html">Film</a></li>
+									</ul>
+								</li>
+								<li ><a href="#">Série</a>
+									<ul class="sub-menu">
+										<li><a href="serie.html">Serie</a></li>
+									</ul>
+								</li>
+								<li ><a href="#">Manga</a>
+									<ul class="sub-menu">
+										<li><a href="manga.html">Manga</a></li>
+									</ul>
+								</li>
+								<li><a href="#">Dessin Animé</a>
+									<ul class="sub-menu">
+										<li><a href="dessinanime.html">Dessin Animé</a></li>
+									</ul>
+								</li>
+								<li class="current-list-item"> <a href="#">Se Connecter</a>
+									<ul class="sub-menu">
+										<li><a href="Connexion.html">Connexion</a></li>
+										<li><a href="index_2.html">Inscription</a></li>
+									</ul>
+								</li>
+							
+								<li>
+									<div class="header-icons">
+										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
+									</div>
+								</li>
+								
+							</ul>
+						</nav>
+						<a class="mobile-show search-bar-icon" href="#"><i class="fas fa-search"></i></a>
+						<div class="mobile-menu"></div>
+						<!-- menu end -->
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- end header -->
+      
+      <!-- search area -->
+      <div class="search-area">
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-12">
+                      <span class="close-btn"><i class="fas fa-window-close"></i></span>
+                      <div class="search-bar">
+                          <div class="search-bar-tablecell">
+                              <h3>Search For:</h3>
+                              <input type="text" placeholder="Keywords">
+                              <button type="submit">Search <i class="fas fa-search"></i></button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- end search area -->
+  <!-- Header - set the background image for the header in the line below-->
+  <header class="py-5 bg-image-full" style="background-image: url('https://panthea.com/wp-content/uploads/2019/05/Panthea-Theater.jpg')">
+    <div class="text-center my-5">
+        
+         <!-- hero area -->
+      
+                            
+      <!-- Content section | connexion-->
+      <section class="py-5">
+          <div class="container my-5">
+              <div class="row justify-content-center">
+                  <div class="col-lg-6">
+                      <div class="mb-3">
+
+
+                        <div class="col-lg-8 offset-lg-2 text-center">
+                            <div class="breadcrumb-text">
+                                
+                                <h1>Bienvenue</h1>
+                                <br>
+                                <p for="exampleFormControlInput1" class="form-label">Pseudo : </p>
+                          <input class="form-control" id="pseudo">
+                        <br>
+                        <div class="mb-3">
+                            <p for="exampleFormControlTextarea1" class="form-label">Mot de passe : </p>
+                            <input class="form-control" id="mot_de_passe">
+                          </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                          
+                       
+                        <a href="#" color="black">Mot de passe oublié ?</a> </br>
+                        
+                        <div class="hero-btns">
+                          <a href="Connexion.html" class="boxed-btn">Se Connecter</a>
+                          <a class="bordered-btn"  onclick="document.getElementById('id01').style.display='block'" style="width:auto;">S'inscrire</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+      <!--- fin section -->
+
+      <!--modal-->
+      <div id="id01" class="modal">
+  
+        <form class="modal-content animate" action="/action_page.php" method="post">
+          <div class="imgcontainer">
+            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+           <br>
+            <h3>Formulaire d'inscription</h3>
+            <img src="assets/img/img_avatar2.png" alt="Avatar" class="avatar">
+          </div>
+      
+          <div class="container">
+            <label for="pseudo"><b>Pseudo</b></label>
+            <input type="text" placeholder="Votre Pseudo" name="pseudo" required >
+            
+            <label for="nom"><b>Nom</b></label>
+            <input type="text" placeholder="Votre Nom" name="nom" required>
+
+            <label for="prenom"><b>Prenom</b></label>
+            <input type="text" placeholder="Votre Prenom" name="prenom" required>
+
+        
+            <label for="mail"><b>Email</b></label>
+            <input type="text" placeholder="Votre Email" name="mail" required>
+
+            <label for="psw"><b>Mot de Passe</b></label>
+            <input type="password" placeholder="Votr Mot de Passe" name="psw" required>
+           
+
+            <a type="submit" class="boxed-btn">S'inscrire</a>
+            
+          </div>
+      
+          
+        </form>
+      </div>
+      <!--fin modal-->
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end hero area -->
+
+    </div>
+</header>
+     
+     
+    
+	<!-- footer -->
+	<div class="footer-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3 col-md-6">
+					<div class="footer-box about-widget">
+						<h2 class="widget-title">Qui sommes nous?</h2>
+						<p>Ut enim ad minim veniam perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.</p>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<div class="footer-box get-in-touch">
+						<h2 class="widget-title">Pour nous contacter</h2>
+						<ul>
+							<li>34/8, East Hukupara, Gifirtok, Sadan.</li>
+							<li>support@fruitkha.com</li>
+							<li>+00 111 222 3333</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<div class="footer-box pages">
+						<h2 class="widget-title">Pages</h2>
+						<ul>
+							<li><a href="index.html">Acceuil</a></li>
+							<li><a href="film.html">Film</a></li>
+							<li><a href="serie.html">Série</a></li>
+							<li><a href="manga.html">Manga</a></li>
+							<li><a href="Connexion.html">Connexion</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<div class="footer-box subscribe">
+						<h2 class="widget-title">S'inscrire </h2>
+						<p>Subscribe to our mailing list to get the latest updates.</p>
+						<form action="index.html">
+							<input type="email" placeholder="Email">
+							<button type="submit"><i class="fas fa-paper-plane"></i></button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end footer -->
+      <!-- copyright -->
+      <div class="copyright">
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-6 col-md-12">
+                      <p>Copyrights &copy; 2019 - <a href="https://imransdesign.com/">Imran Hossain</a>,  All Rights Reserved.</p>
+                  </div>
+                  <div class="col-lg-6 text-right col-md-12">
+                      <div class="social-icons">
+                          <ul>
+                              <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                              <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                              <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                              <li><a href="#" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                              <li><a href="#" target="_blank"><i class="fab fa-dribbble"></i></a></li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- end copyright -->
+      
+      <!-- jquery -->
+      <script src="assets/js/jquery-1.11.3.min.js"></script>
+      <!-- bootstrap -->
+      <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+      <!-- count down -->
+      <script src="assets/js/jquery.countdown.js"></script>
+      <!-- isotope -->
+      <script src="assets/js/jquery.isotope-3.0.6.min.js"></script>
+      <!-- waypoints -->
+      <script src="assets/js/waypoints.js"></script>
+      <!-- owl carousel -->
+      <script src="assets/js/owl.carousel.min.js"></script>
+      <!-- magnific popup -->
+      <script src="assets/js/jquery.magnific-popup.min.js"></script>
+      <!-- mean menu -->
+      <script src="assets/js/jquery.meanmenu.min.js"></script>
+      <!-- sticker js -->
+      <script src="assets/js/sticker.js"></script>
+      <!-- main js -->
+      <script src="assets/js/main.js"></script>
+  
+
+      <script>
+        // Get the modal
+        var modal = document.getElementById('id01');
+        
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+        </script>
+  </body>
+  </html>
+

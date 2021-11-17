@@ -28,6 +28,8 @@ class ExtractionFilms{
         ));
         
         $response = curl_exec($curl);
+
+        echo $response;
         
         curl_close($curl);
 
@@ -54,6 +56,5 @@ class ExtractionFilms{
         echo "</tbody></table>";
     }
 }
-
 ExtractionFilms::afficher_tableau(ExtractionFilms::listeFilms(ExtractionFilms::extraire("https://imdb-api.com/en/API/Top250Movies/k_8bo54fka")));
 ?>

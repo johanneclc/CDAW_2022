@@ -1336,3 +1336,4 @@
 172.18.0.1 - - [17/Nov/2021:10:12:13 +0000] "GET /exoRest/imdb.php HTTP/1.1" 200 3571 "http://localhost:8080/exoRest/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36"
 172.18.0.1 - - [17/Nov/2021:10:12:59 +0000] "GET /exoRest/imdb.php HTTP/1.1" 200 3657 "http://localhost:8080/exoRest/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36"
 172.18.0.1 - - [17/Nov/2021:10:13:44 +0000] "GET /exoRest/imdb.php HTTP/1.1" 200 27428 "http://localhost:8080/exoRest/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36"
+172.18.0.1 - - [18/Nov/2021:09:19:43 +0000] "-" 408 0 "-" "-"

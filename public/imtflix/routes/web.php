@@ -39,6 +39,7 @@ Route::get('/listeMedias', function () {
 });
 
 Route::get('/listeMediasController/{params}', 'App\Http\controllers\listeMediasController@afficherListeMediasParams');
+Route::get('/categoriesController', 'App\Http\controllers\categoriesController@afficherCategories');
 
 Route::get('/html', function () {
     echo "<!doctype html>

@@ -15,11 +15,11 @@ class FilmsTable extends Migration
     {
         Schema::create('films', function (Blueprint $table) {
             $table->id();
-            $table->string('titre'); 
-            // $table->timestamp('duree'); 
-            $table->year('annee'); 
-            $table->foreignId('category'); 
-            $table->string('chemin'); 
+            $table->string('titre');
+            // $table->timestamp('duree');
+            $table->year('annee');
+            $table->foreignId('category_id')->constrained('categories');
+            $table->string('chemin');
             $table->timestamps();
         });
     }

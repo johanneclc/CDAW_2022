@@ -12,8 +12,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-// TP LARAVEL 
-// // Premiere facon 
+// TP LARAVEL
+// // Premiere facon
 // Route::get('/', function () {
 //     return view('accueil');
 // });
@@ -55,20 +55,21 @@ use Illuminate\Support\Facades\Route;
 //     </html>";
 // });
 
-//AU PROPRE POUR NOTRE SITE 
+//AU PROPRE POUR NOTRE SITE
 
 // Accueil
-Route::get('/', 
+Route::get('/',
             'App\Http\controllers\listeMediasController@afficherAccueil');
 
-// Profil Utilisateur 
+// Profil Utilisateur
 Route::get('/monProfil/{id_utilisateur}', 'App\Http\controllers\userController@afficherMonProfil');
 
 // Admin gestion utilisateurs
 // Formulaire de création de film
 Route::get('/creerFilm', 'App\Http\controllers\listeMediasController@afficherFormulaire');
+Route::post('creerFilm','App\Http\controllers\listeMediasController@afficherFormulaire');
 
 //Accueil avec catégories
-Route::get('/accueilCategories', 
+Route::get('/accueilCategories',
             'App\Http\controllers\categoriesController@afficherCategories');
 

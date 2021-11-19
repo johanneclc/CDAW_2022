@@ -13,6 +13,14 @@ class listeMediasController extends Controller
     public function afficherListeMediasParams($params){
         return view("listeMedias", ['params'=>$params]); 
     } 
+
+    function afficherAccueil(){
+        return view('listeMedias');
+    }
+
+    function afficherFormulaire(){
+        return view('formulaireFilm');
+    }
 }
 
 ?>

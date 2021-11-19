@@ -16,10 +16,10 @@ class FilmsTable extends Migration
         Schema::create('films', function (Blueprint $table) {
             $table->id();
             $table->string('titre'); 
-            $table->string('duree'); 
-            $table->string('annee'); 
-            $table->string('category'); 
-            $table->string('image'); 
+            // $table->timestamp('duree'); 
+            $table->year('annee'); 
+            $table->foreignId('category'); 
+            $table->string('chemin'); 
             $table->timestamps();
         });
     }

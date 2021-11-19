@@ -1,4 +1,4 @@
-@extends('templateAccueil') 
+@extends('templateAccueil')
 
 @section('content')
     <h1>Bienvenue </h1><br>

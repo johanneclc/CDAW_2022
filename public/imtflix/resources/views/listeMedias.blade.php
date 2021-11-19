@@ -1,4 +1,4 @@
-@extends('templateAccueil') 
+@extends('templateAccueil')
 
 @section('content')
     <h1>Bienvenue</h1><br>
@@ -73,7 +73,7 @@
         </div>
         <div class="client-meta">
             <p class="testimonial-body">
-                YOU | Serie Netflix <br> 
+                YOU | Serie Netflix <br>
                 " Sed ut perspiciatis unde omnis iste natus error veritatis et  quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium "
             </p>
             <div class="last-icon">

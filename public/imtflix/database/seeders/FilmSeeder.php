@@ -14,7 +14,7 @@ class FilmSeeder extends Seeder
     public function run()
     {
         // $curl = curl_init();
- 
+
         // curl_setopt_array($curl, array(
         // CURLOPT_URL => "https://imdb-api.com/en/API/Top250Movies/k_8bo54fka",
         // CURLOPT_RETURNTRANSFER => true,
@@ -25,14 +25,14 @@ class FilmSeeder extends Seeder
         // CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
         // CURLOPT_CUSTOMREQUEST => "GET",
         // ));
-        
+
         // $response = curl_exec($curl);
 
         // echo $response;
-        
+
         // curl_close($curl);
 
-        // $films = json_decode($response, true); 
+        // $films = json_decode($response, true);
         // foreach($films["items"] as $film){
         //     DB::table('films')->insert([
         //         // 'duree' => $film->duree;
@@ -41,10 +41,10 @@ class FilmSeeder extends Seeder
         //         'chemin' => $film["year"];
         //        ]);
         // }
-        
+
 
 
         \App\Models\Film::factory(10)->create();
-        
+
     }
 }

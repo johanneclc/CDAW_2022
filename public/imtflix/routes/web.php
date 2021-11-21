@@ -66,14 +66,14 @@ Route::get('/',
 Route::get('/monProfil/{id_utilisateur}', 'App\Http\controllers\userController@afficherMonProfil');
 
 // Admin gestion utilisateurs
+
 // Formulaire de création de film
-Route::get('/creerFilm', 'App\Http\controllers\listeMediasController@afficherFormulaire');
-Route::post('creerFilm','App\Http\controllers\listeMediasController@afficherFormulaire');
+// Route::get('/creerFilm', 'App\Http\controllers\listeMediasController@afficherFormulaire');
+// Route::post('creerFilm','App\Http\controllers\listeMediasController@afficherFormulaire');
 
-//Accueil avec catégories
-Route::get('/accueilCategories',
-            'App\Http\controllers\categoriesController@afficherCategories');
-
-//route wifek
+//route CRUD films
 Route::resource('movies', MoviesController::class);
+
+
+
 

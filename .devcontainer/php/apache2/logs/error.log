@@ -774,6 +774,21 @@ AH00558: apache2: Could not reliably determine the server's fully qualified doma
 [Fri Nov 19 14:44:45.787381 2021] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.51 (Debian) PHP/8.0.12 configured -- resuming normal operations
 [Fri Nov 19 14:44:45.787749 2021] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
 >>>>>>> 5ee6218579a8b16cd80125d8df50c3053afe892c
+<<<<<<< HEAD
 AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.18.0.4. Set the 'ServerName' directive globally to suppress this message
 [Sun Nov 21 20:16:08.807698 2021] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.51 (Debian) PHP/8.0.12 configured -- resuming normal operations
 [Sun Nov 21 20:16:08.808276 2021] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+=======
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.20.0.4. Set the 'ServerName' directive globally to suppress this message
+[Sun Nov 21 11:18:45.211264 2021] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.51 (Debian) PHP/8.0.12 configured -- resuming normal operations
+[Sun Nov 21 11:18:45.211725 2021] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+[Sun Nov 21 19:12:04.344459 2021] [php:notice] [pid 18] [client 172.20.0.1:40064] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 172.20.0.1:9003 (from REMOTE_ADDR HTTP header), localhost:9003 (fallback through xdebug.client_host/xdebug.client_port) :-(
+[Sun Nov 21 19:12:16.763261 2021] [php:notice] [pid 18] [client 172.20.0.1:40064] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 172.20.0.1:9003 (from REMOTE_ADDR HTTP header), localhost:9003 (fallback through xdebug.client_host/xdebug.client_port) :-(
+[Sun Nov 21 19:12:16.763777 2021] [php:notice] [pid 18] [client 172.20.0.1:40064] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 172.20.0.1:9003 (from REMOTE_ADDR HTTP header), localhost:9003 (fallback through xdebug.client_host/xdebug.client_port) :-(
+[Sun Nov 21 19:12:21.318224 2021] [php:notice] [pid 19] [client 172.20.0.1:40068] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 172.20.0.1:9003 (from REMOTE_ADDR HTTP header), localhost:9003 (fallback through xdebug.client_host/xdebug.client_port) :-(
+[Sun Nov 21 19:12:26.342548 2021] [php:notice] [pid 19] [client 172.20.0.1:40068] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 172.20.0.1:9003 (from REMOTE_ADDR HTTP header), localhost:9003 (fallback through xdebug.client_host/xdebug.client_port) :-(
+[Sun Nov 21 19:12:26.355354 2021] [php:notice] [pid 19] [client 172.20.0.1:40068] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 172.20.0.1:9003 (from REMOTE_ADDR HTTP header), localhost:9003 (fallback through xdebug.client_host/xdebug.client_port) :-(
+[Sun Nov 21 19:12:47.982185 2021] [php:notice] [pid 20] [client 172.20.0.1:40084] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 172.20.0.1:9003 (from REMOTE_ADDR HTTP header), localhost:9003 (fallback through xdebug.client_host/xdebug.client_port) :-(
+[Sun Nov 21 19:12:56.296569 2021] [php:notice] [pid 20] [client 172.20.0.1:40084] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 172.20.0.1:9003 (from REMOTE_ADDR HTTP header), localhost:9003 (fallback through xdebug.client_host/xdebug.client_port) :-(
+[Sun Nov 21 19:12:56.297812 2021] [php:notice] [pid 20] [client 172.20.0.1:40084] Xdebug: [Step Debug] Could not connect to debugging client. Tried: 172.20.0.1:9003 (from REMOTE_ADDR HTTP header), localhost:9003 (fallback through xdebug.client_host/xdebug.client_port) :-(
+>>>>>>> a227fc58ea8b4e8b28a4462d4203b8b2d4d48bde

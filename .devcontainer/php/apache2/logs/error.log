@@ -774,3 +774,6 @@ AH00558: apache2: Could not reliably determine the server's fully qualified doma
 [Fri Nov 19 14:44:45.787381 2021] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.51 (Debian) PHP/8.0.12 configured -- resuming normal operations
 [Fri Nov 19 14:44:45.787749 2021] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
 >>>>>>> 5ee6218579a8b16cd80125d8df50c3053afe892c
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.18.0.4. Set the 'ServerName' directive globally to suppress this message
+[Sun Nov 21 20:16:08.807698 2021] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.51 (Debian) PHP/8.0.12 configured -- resuming normal operations
+[Sun Nov 21 20:16:08.808276 2021] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'

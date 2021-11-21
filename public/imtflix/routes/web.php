@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MoviesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -72,4 +73,7 @@ Route::post('creerFilm','App\Http\controllers\listeMediasController@afficherForm
 //Accueil avec catégories
 Route::get('/accueilCategories',
             'App\Http\controllers\categoriesController@afficherCategories');
+
+//route wifek
+Route::resource('movies', MoviesController::class);
 

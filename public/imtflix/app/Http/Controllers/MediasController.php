@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Movie;
+use App\Models\Media;
 use App\Models\category;
 use Illuminate\Http\Request;
 
-class MoviesController extends Controller
+class MediasController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,16 +15,16 @@ class MoviesController extends Controller
      */
     public function index($name = null)
     {
-        $movies = Movie::with('category')->latest()->paginate(5);
+        $medias = Media::with('category')->latest()->paginate(5);
 
-    
-        return view('movies.index',compact('movies'))
+
+        return view('medias.index',compact('medias'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
 
-    // $query = $name ? category::whereName($name)->firstOrFail()->movies() : Movie::query();
-    // $movies = $query->withTrashed()->oldest('title')->paginate(5);
+    // $query = $name ? category::whereName($name)->firstOrFail()->medias() : Media::query();
+    // $medias = $query->withTrashed()->oldest('title')->paginate(5);
     // $categories = category::all();
-    // return view('index', compact('movies', 'categories', 'name'));
+    // return view('index', compact('medias', 'categories', 'name'));
     }
 
     /**
@@ -35,7 +35,7 @@ class MoviesController extends Controller
     public function create()
     {
        $categories = category::all();
-        return view('movies.create',compact('categories'));
+        return view('medias.create',compact('categories'));
     }
 
     /**
@@ -54,43 +54,43 @@ class MoviesController extends Controller
             'category_id' => 'required',
         ]);
 
-    
-        Movie::create($request->all());
-     
-        return redirect()->route('movies.index')->with('success','Film ajouté avec succés.');
+
+        Media::create($request->all());
+
+        return redirect()->route('Medias.index')->with('success','Film ajouté avec succés.');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Movie  $movie
+     * @param  \App\Models\Media  $medias
      * @return \Illuminate\Http\Response
      */
-    public function show(Movie $movie)
+    public function show(media $Media)
     {
-      //  $category = $movie->category->name; 
-        return view('movies.show',compact('movie', 'category'));
+      //  $category = $medias->category->name;
+        return view('medias.show',compact('media', 'category'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Movie  $movie
+     * @param  \App\Models\Media  $medias
      * @return \Illuminate\Http\Response
      */
-    public function edit(Movie $movie)
+    public function edit(Media $medias)
     {
-        return view('movies.edit',compact('movie'));
+        return view('medias.edit',compact('medias'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Movie  $movie
+     * @param  \App\Models\Media  $medias
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Movie $movie)
+    public function update(Request $request, Media $medias)
     {
         $request->validate([
             'name' => 'required',
@@ -98,22 +98,22 @@ class MoviesController extends Controller
             'annee' => 'required',
             'categorie' => 'required',
         ]);
-    
-        $movie->update($request->all());
-    
-        return redirect()->route('movies.index')->with('success','film modifié avec succés');
+
+        $medias->update($request->all());
+
+        return redirect()->route('medias.index')->with('success','film modifié avec succés');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Movie  $movie
+     * @param  \App\Models\Media  $medias
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Movie $movie)
+    public function destroy(Media $medias)
     {
-        $movie->delete();
-    
-        return redirect()->route('movies.index')->with('success','film supprimé avec success');
+        $medias->delete();
+
+        return redirect()->route('medias.index')->with('success','film supprimé avec success');
     }
 }

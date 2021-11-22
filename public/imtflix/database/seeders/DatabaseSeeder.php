@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use App\Models\category;
+use App\Models\Movie;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,9 +15,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call([
-            CategorySeeder::class
-        ]);
+      \App\Models\Movie::factory(10)->create();
+      
+      //category::factory()->has(Movie::factory()->count(4))
+        //->count(10)
+        //->create();
+      //  $this->call([
+      //      CategorySeeder::class
+        //]);
         // \App\Models\User::factory(10)->create();
     }
 }

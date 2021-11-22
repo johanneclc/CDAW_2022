@@ -75,3 +75,5 @@ Route::get('/monProfil/{id_utilisateur}', 'App\Http\controllers\userController@a
 Route::resource('movies', MoviesController::class);
 Route::get('creerFilm', 'App\Http\controllers\MoviesController@store');
 
+Route::get('category/{name}/movies', [MoviesController::class, 'index'])->name('movies.category');
+

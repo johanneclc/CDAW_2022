@@ -10,4 +10,9 @@ class category extends Model
     use HasFactory;
 
     protected $table = 'categories'; 
+
+    public function films() 
+{ 
+    return $this->hasMany(Movie::class); 
+}
 }

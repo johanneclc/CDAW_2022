@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Movie;
+use App\Models\category;
 use Illuminate\Http\Request;
 
 class MoviesController extends Controller
@@ -12,12 +13,18 @@ class MoviesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($name = null)
     {
-        $movies = Movie::latest()->paginate(5);
+        $movies = Movie::with('category')->latest()->paginate(5);
+
     
         return view('movies.index',compact('movies'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
+
+    // $query = $name ? category::whereName($name)->firstOrFail()->movies() : Movie::query();
+    // $movies = $query->withTrashed()->oldest('title')->paginate(5);
+    // $categories = category::all();
+    // return view('index', compact('movies', 'categories', 'name'));
     }
 
     /**
@@ -27,7 +34,8 @@ class MoviesController extends Controller
      */
     public function create()
     {
-        return view('movies.create');
+       $categories = category::all();
+        return view('movies.create',compact('categories'));
     }
 
     /**
@@ -43,7 +51,9 @@ class MoviesController extends Controller
             'detail' => 'required',
             'annee' => 'required',
             'categorie' => 'required',
+            'category_id' => 'required',
         ]);
+
     
         Movie::create($request->all());
      
@@ -58,7 +68,8 @@ class MoviesController extends Controller
      */
     public function show(Movie $movie)
     {
-        return view('movies.show',compact('movie'));
+      //  $category = $movie->category->name; 
+        return view('movies.show',compact('movie', 'category'));
     }
 
     /**

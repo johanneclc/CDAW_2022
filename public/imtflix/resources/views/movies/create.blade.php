@@ -51,6 +51,15 @@
                 <textarea class="form-control" style="height:150px" name="categorie" placeholder="genre"></textarea>
             </div>
         </div>
+        
+        <div class="select">
+            <select name="category_id">
+                @foreach($categories as $category)
+                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                @endforeach
+            </select>
+        </div>
+
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                 <button type="submit" class="btn btn-primary">Envoyer</button>
         </div>

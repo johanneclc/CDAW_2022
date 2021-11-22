@@ -9,7 +9,7 @@ class Film extends Model
 {
     use HasFactory;
 
-    public function getFilmsCategories(){
+    public function getMoviesCategories(){
         return $this->belongsTo(related: Category::class, foreignKey: 'category_id' , ownerKey:'id');
     }
 }

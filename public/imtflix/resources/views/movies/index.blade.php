@@ -1,6 +1,7 @@
 @extends('movies.layout')
 
 @section('content')
+
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
@@ -24,6 +25,7 @@
             <th>Détails</th>
             <th>Année</th>
             <th>Genre</th>
+            
             <th width="280px">Action</th>
         </tr>
         @foreach ($movies as $movie)
@@ -32,7 +34,8 @@
             <td>{{ $movie->name }}</td>
             <td>{{ $movie->detail }}</td>
             <td>{{ $movie->annee }}</td>
-            <td>{{ $movie->categorie }}</td>
+
+            <td>{{ $movie->category->name }}</td>
             <td>
                 <form action="{{ route('movies.destroy',$movie->id) }}" method="POST">
    

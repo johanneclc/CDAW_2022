@@ -13,8 +13,9 @@ class CategoryFactory extends Factory
      */
     public function definition()
     {
+        $name = $this->faker->word();
         return [
-            'name' => $this->faker->unique()->word // A single unique word
-        ];
+            'name' => $name,
+          ];
     }
 }

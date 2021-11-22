@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Media extends Model
+class Movie extends Model
 {
     use HasFactory;
 
@@ -13,7 +13,7 @@ class Media extends Model
         'name', 'detail', 'annee', 'categorie', 'category_id'
     ];
     public function category()
-    {
-        return $this->belongsTo(category::class);
+    { 
+        return $this->belongsTo(category::class); 
     }
 }

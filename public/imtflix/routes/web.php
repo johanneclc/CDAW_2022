@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\MoviesController;
+use App\Http\Controllers\MediasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -72,8 +72,8 @@ Route::get('/monProfil/{id_utilisateur}', 'App\Http\controllers\userController@a
 // Route::post('creerFilm','App\Http\controllers\listeMediasController@afficherFormulaire');
 
 //route CRUD films
-Route::resource('movies', MoviesController::class);
-Route::get('creerFilm', 'App\Http\controllers\MoviesController@store');
+Route::resource('medias', MediasController::class);
+// Route::get('creerFilm', 'App\Http\controllers\MediasController@store');
 
-Route::get('category/{name}/movies', [MoviesController::class, 'index'])->name('movies.category');
+// Route::get('category/{name}/movies', [MoviesController::class, 'index'])->name('movies.category');
 

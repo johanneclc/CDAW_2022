@@ -73,5 +73,5 @@ Route::get('/monProfil/{id_utilisateur}', 'App\Http\controllers\userController@a
 
 //route CRUD films
 Route::resource('movies', MoviesController::class);
-Route::get('/creerFilm', 'App\Http\controllers\MoviesController@store');
+Route::get('creerFilm', 'App\Http\controllers\MoviesController@store');
 

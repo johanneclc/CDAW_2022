@@ -34,8 +34,16 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Genre:</strong>
-                {{ $movie->categorie }}
+                
+                 {{ $movie->categorie }} 
             </div>
+        </div>
+        <div class="select">
+            <select name="category_id">
+                @foreach($categories as $category)
+                    <option value="{{ $movie->category_id }}">{{ $category->name }}</option>
+                @endforeach
+            </select>
         </div>
     </div>
 @endsection

@@ -11,6 +11,11 @@ class categoriesController extends Controller
         $categories = Category::all(); 
         return view("categories", ['categories'=>$categories]); 
     } 
+//     public function create()
+// {
+//     $categories = Category::all();
+//     return view('create', compact('categories'));
+// }
 }
 
 ?>

@@ -77,3 +77,5 @@ Route::get('/accueilCategories',
 //route wifek
 Route::resource('movies', MoviesController::class);
 
+Route::get('category/{name}/movies', [MoviesController::class, 'index'])->name('movies.category');
+

@@ -9,6 +9,8 @@ class Media extends Model
 {
     use HasFactory;
 
+    protected $table = 'medias';
+
     protected $guarded = [
         'created_at','update_at'
     ];

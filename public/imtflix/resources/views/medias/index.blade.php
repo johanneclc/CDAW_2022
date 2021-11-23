@@ -18,34 +18,39 @@
         </div>
     @endif
 
-    <table class="table table-bordered">
+    <table class="table table-bordered text-white">
         <tr>
             <th>No</th>
-            <th>Nom</th>
-            <th>Détails</th>
+            <th>Catégorie</th>
+            <th>Titre</th>
+            <th>Déscription</th>
             <th>Année</th>
             <th>Genre</th>
 
             <th width="280px">Action</th>
         </tr>
-        @foreach ($medias as $movie)
+        @foreach ($medias as $media)
         <tr>
             <td>{{ ++$i }}</td>
-            <td>{{ $movie->name }}</td>
-            <td>{{ $movie->detail }}</td>
-            <td>{{ $movie->annee }}</td>
-
-            <td>{{ $movie->category->name }}</td>
             <td>
-                <form action="{{ route('medias.destroy',$movie->id) }}" method="POST">
+                    @foreach($media->categories as $categorie)
+                        {{$categorie->nom_categorie}}
+                    @endforeach
+            </td>
+            <td>{{ $media->titre }}</td>
+            <td>{{ $media->description }}</td>
+            <td>{{ $media->annee }}</td>
 
-                    <a class="btn btn-info" href="{{ route('medias.show',$movie->id) }}">Show</a>
+            <td>{{ $media->type->nom_type }}</td>
+            <td>
+                <form action="{{ route('medias.destroy',$media->id_media) }}" method="POST">
 
-                    <a class="btn btn-primary" href="{{ route('medias.edit',$movie->id) }}">Edit</a>
+                    <a class="btn btn-info" href="{{ route('medias.show',$media->id_media) }}">Show</a>
+
+                    <a class="btn btn-primary" href="{{ route('medias.edit',$media->id_media) }}">Edit</a>
 
                     @csrf
                     @method('DELETE')
-
                     <button type="submit" class="btn btn-danger">Delete</button>
                 </form>
             </td>

@@ -77,3 +77,7 @@ Route::get('/creerFilm', 'App\Http\controllers\MoviesController@store');
 
 Route::get('category/{name}/movies', [MoviesController::class, 'index'])->name('movies.category');
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

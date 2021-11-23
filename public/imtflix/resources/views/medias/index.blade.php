@@ -45,13 +45,22 @@
             <td>
                 <form action="{{ route('medias.destroy',$media->id_media) }}" method="POST">
 
-                    <a class="btn btn-info" href="{{ route('medias.show',$media->id_media) }}">Show</a>
+                    <a class="btn btn-info" href="{{ route('medias.show',$media->id_media) }}">
+                        <i class="fas fa-eye"></i>
+                        Show
+                    </a>
 
-                    <a class="btn btn-primary" href="{{ route('medias.edit',$media->id_media) }}">Edit</a>
+                    <a class="btn btn-primary" href="{{ route('medias.edit',$media->id_media) }}">
+                        <i class="fas fa-pen"></i>
+                        Edit
+                    </a>
 
                     @csrf
                     @method('DELETE')
-                    <button type="submit" class="btn btn-danger">Delete</button>
+                    <button type="submit" class="btn btn-danger">
+                        <i class="fas fa-trash"></i>
+                        Delete
+                    </button>
                 </form>
             </td>
         </tr>

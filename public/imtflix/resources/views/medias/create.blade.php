@@ -54,13 +54,14 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong class="text-white">Genre Film:</strong>
-                <select name="id_categorie" class="select" multiple>
-                    @foreach($categories as $category)
-                            <option value="{{ $category->id_categorie }}">{{ $category->name }}</option>
+                    @foreach($categories as $categorie)
+                      <div>
+                        <input class="form-check-input" type="checkbox" id="cat_{{ $categorie->id_categorie }}" value="{{ $categorie->id_categorie }}">
+                        <label class="form-check-label text-white" for="cat_{{ $categorie->id_categorie }}">{{ $categorie->name }}</label>
+                      </div>
                     @endforeach
                 </select>
             </div>
-
         </div>
 
         <div class="col-xs-12 col-sm-12 col-md-12">

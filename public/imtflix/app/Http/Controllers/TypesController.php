@@ -2,18 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Categorie;
+use App\Models\Type;
 use Illuminate\Http\Request;
 
-class CategoriesController extends Controller
+class TypesController extends Controller
 {
-
-    function afficherCategories(){
-        $categories = Categorie::all();
-        return view("categories", ['categories'=>$categories]);
-    }
-
-
     /**
      * Display a listing of the resource.
      *
@@ -21,7 +14,11 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        //
+        $types = Type::with('getTypesOfMedias')->latest()->paginate(5);
+
+
+        return view('medias.index',compact('medias'))
+        ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**
@@ -48,10 +45,10 @@ class CategoriesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Categorie  $categorie
+     * @param  \App\Models\Type  $type
      * @return \Illuminate\Http\Response
      */
-    public function show(Categorie $categorie)
+    public function show(Type $type)
     {
         //
     }
@@ -59,10 +56,10 @@ class CategoriesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Categorie  $categorie
+     * @param  \App\Models\Type  $type
      * @return \Illuminate\Http\Response
      */
-    public function edit(Categorie $categorie)
+    public function edit(Type $type)
     {
         //
     }
@@ -71,10 +68,10 @@ class CategoriesController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Categorie  $categorie
+     * @param  \App\Models\Type  $type
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Categorie $categorie)
+    public function update(Request $request, Type $type)
     {
         //
     }
@@ -82,10 +79,10 @@ class CategoriesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Categorie  $categorie
+     * @param  \App\Models\Type  $type
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Categorie $categorie)
+    public function destroy(Type $type)
     {
         //
     }

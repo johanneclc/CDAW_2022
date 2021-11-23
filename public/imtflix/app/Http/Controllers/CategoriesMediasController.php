@@ -2,18 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Categorie;
+use App\Models\CategorieMedia;
 use Illuminate\Http\Request;
 
-class CategoriesController extends Controller
+class CategoriesMediasController extends Controller
 {
-
-    function afficherCategories(){
-        $categories = Categorie::all();
-        return view("categories", ['categories'=>$categories]);
-    }
-
-
     /**
      * Display a listing of the resource.
      *
@@ -48,10 +41,10 @@ class CategoriesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Categorie  $categorie
+     * @param  \App\Models\CategorieMedia  $categorieMedia
      * @return \Illuminate\Http\Response
      */
-    public function show(Categorie $categorie)
+    public function show(CategorieMedia $categorieMedia)
     {
         //
     }
@@ -59,10 +52,10 @@ class CategoriesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Categorie  $categorie
+     * @param  \App\Models\CategorieMedia  $categorieMedia
      * @return \Illuminate\Http\Response
      */
-    public function edit(Categorie $categorie)
+    public function edit(CategorieMedia $categorieMedia)
     {
         //
     }
@@ -71,10 +64,10 @@ class CategoriesController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Categorie  $categorie
+     * @param  \App\Models\CategorieMedia  $categorieMedia
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Categorie $categorie)
+    public function update(Request $request, CategorieMedia $categorieMedia)
     {
         //
     }
@@ -82,10 +75,10 @@ class CategoriesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Categorie  $categorie
+     * @param  \App\Models\CategorieMedia  $categorieMedia
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Categorie $categorie)
+    public function destroy(CategorieMedia $categorieMedia)
     {
         //
     }

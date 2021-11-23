@@ -1,5 +1,5 @@
-@extends('movies.layout')
-  
+@extends('medias.layout')
+
 @section('content')
     <div class="row">
         <div class="col-lg-12 margin-tb">
@@ -7,11 +7,11 @@
                 <h2> Afficher film</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('movies.index') }}"> retrour</a>
+                <a class="btn btn-primary" href="{{ route('medias.index') }}"> retrour</a>
             </div>
         </div>
     </div>
-   
+
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
@@ -34,8 +34,8 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Genre:</strong>
-                
-                 {{ $movie->categorie }} 
+
+                 {{ $movie->categorie }}
             </div>
         </div>
         <div class="select">

@@ -10,6 +10,7 @@ class Categorie extends Model
     use HasFactory;
 
     protected $table = 'categories';
+    protected $primaryKey = 'id_categorie';
 
     public function getMediasOfCategories(){
         return $this->hasManyThrough(Media::class, CategorieMedia::class);

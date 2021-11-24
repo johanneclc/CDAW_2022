@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTypeTable extends Migration
+class CreatePersonnesMediaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateTypeTable extends Migration
      */
     public function up()
     {
-        Schema::disableForeignKeyConstraints();
-        Schema::create('types', function (Blueprint $table) {
-            $table->id('id_type');
-            $table->string('nom_type');
+        Schema::create('personnes_media', function (Blueprint $table) {
+            $table->id('id_personne_media');
+            $table->foreignKey('id_media');
+            $table->foreignKey('id_personne');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateTypeTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('type');
+        Schema::dropIfExists('personnes_media');
     }
 }

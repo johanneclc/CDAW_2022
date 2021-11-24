@@ -83,7 +83,7 @@
 								<li> <a href="Connexion.html">Admin</a>
 									<ul class="sub-menu">
 										<li><a href="gestion_utilisateurs.html">Gestion Utilisateurs</a></li>
-									</ul>
+                                        <li><a href="medias">Gestion des Médias</a></li>									</ul>
 								</li>
 								<li> <a href="Connexion.html">Se Connecter</a>
 									<ul class="sub-menu">

@@ -1,4 +1,4 @@
-@extends('medias.layout')
+@extends('template')
 
 @section('content')
     <div class="row">

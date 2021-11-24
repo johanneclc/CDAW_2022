@@ -85,7 +85,7 @@
 										<li><a href="gestion_utilisateurs.html">Gestion Utilisateurs</a></li>
 									</ul>
 								</li>
-								<li> <a href="Connexion.html">Se Connecter</a>
+								<li> <a href="/login">Se Connecter</a>
 									<ul class="sub-menu">
 										<li><a href="Connexion.html">Connexion</a></li>
 										<li><a href="Connexion.html">Inscription</a></li>

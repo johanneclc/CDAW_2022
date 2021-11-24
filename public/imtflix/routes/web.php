@@ -78,6 +78,17 @@ Route::resource('medias', MediasController::class);
 // Route::get('category/{name}/movies', [MoviesController::class, 'index'])->name('movies.category');
 
 
-Auth::routes();
+// Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// login
+Route::get('/login',
+            'App\Http\controllers\listeMediasController@afficherLogin')->name('afficherlogin');
+
+Route::post('/login',
+'App\Http\controllers\listeMediasController@postLogin')->name('login');
+
+// register
+Route::get('/register',
+            'App\Http\controllers\listeMediasController@afficherRegister');

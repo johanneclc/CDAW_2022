@@ -82,14 +82,14 @@
 								</li>
 								<li> <a href="Connexion.html">Admin</a>
 									<ul class="sub-menu">
-										<li><a href="gestion_utilisateurs">Gestion des Utilisateurs</a></li>
-                                        <li><a href="gestion_medias">Gestion des Médias</a></li>
-                                    </ul>
+										<li><a href="gestion_utilisateurs.html">Gestion Utilisateurs</a></li>
+									</ul>
 								</li>
-								<li> <a href="/login">Se Connecter</a>
+								<li> <a href="Connexion.html">Se Connecter</a>
 									<ul class="sub-menu">
 										<li><a href="Connexion.html">Connexion</a></li>
 										<li><a href="Connexion.html">Inscription</a></li>
+										<li><a href="profil.html">Mon Profil</a></li>
 									</ul>
 								</li>
 
@@ -162,92 +162,6 @@
 		  </section>
 		  </div>
 		  </header>
-	<!-- logo carousel -->
-	<div class="logo-carousel-section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="logo-carousel-inner">
-							@yield("logo carousel")
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-	<!-- end logo carousel -->
-
-	<!-- product section -->
-	<div class="product-section mt-150 mb-150">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-8 offset-lg-2 text-center">
-					<div class="section-title">
-						@yield("product section titre")
-					</div>
-				</div>
-			</div>
-
-			<div class="row">
-				@yield("product section content")
-
-			</div>
-		</div>
-	</div>
-	<!-- end product section -->
-
-
-
-	<!-- testimonail-section -->
-	<div class="py-5 bg-image-full" style="background-image: url('https://panthea.com/wp-content/uploads/2019/05/Panthea-Theater.jpg')">
-
-		<div class="row">
-			<div class="col-lg-8 offset-lg-2 text-center">
-				<div class="section-title">
-					@yield("testimonail-section title")
-				</div>
-			</div>
-		</div>
-	<div class="testimonail-section mt-150 mb-150">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-10 offset-lg-1 text-center">
-					<div class="testimonial-sliders">
-						@yield("testimonail-section content")
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	</div>
-
-	<br>
-	<br>
-	<!-- end testimonail-section -->
-
-	<!-- latest news -->
-	<div class="latest-news pt-150 pb-150">
-		<div class="container">
-
-			<div class="row">
-				<div class="col-lg-8 offset-lg-2 text-center">
-					<div class="section-title">
-						@yield("latest news title")
-					</div>
-				</div>
-			</div>
-
-			<div class="row">
-				@yield("latest news content")
-			</div>
-			<div class="row">
-				<div class="col-lg-12 text-center">
-					<a href="films_series.html" class="boxed-btn">Voir Plus</a>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- end latest news -->
 
 
 

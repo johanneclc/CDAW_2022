@@ -7,7 +7,7 @@
                 <h2> Afficher film</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('gestion_medias.index') }}"> retrour</a>
+                <a class="btn btn-primary" href="{{ route('users.index') }}"> retrour</a>
             </div>
         </div>
     </div>
@@ -16,31 +16,31 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Nom:</strong>
-                {{ $media->titre }}
+                {{ $user->titre }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Details:</strong>
-                {{ $media->description }}
+                {{ $user->description }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Année:</strong>
-                {{ $media->annee }}
+                {{ $user->annee }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Genre:</strong>
-                 {{ $media->type->nom_type }}
+                 {{ $user->type->nom_type }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Categorie(s) :</strong>
-                @foreach($media->categories as $categorie)
+                @foreach($user->categories as $categorie)
                     {{ $categorie->name }}<br>
                 @endforeach
             </div>

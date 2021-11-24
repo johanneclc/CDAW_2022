@@ -17,7 +17,9 @@ class CreatePersonnesTable extends Migration
             $table->id('id_personne');
             $table->string('nom_personne');
             $table->string('prenom_personne');
-            $table->foreignKey('id_role_personne');
+            $table->unsignedBigInteger('id_role_personne');
+            $table->foreign('id_role_personne')->references('id_role_personne')->on('roles_personne')->onDelete('restrict')->onUpdate('restrict');
+
             $table->timestamps();
         });
     }

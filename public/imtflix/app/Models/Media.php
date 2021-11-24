@@ -23,4 +23,9 @@ class Media extends Model
     public function type(){
         return $this->hasOne(Type::class,'id_type','id_type');
     }
+
+    public function acteurs()
+    {
+        return $this->hasManyThrough(Personne::class, PersonneMedia::class,'id_media','id_personne');
+    }
 }

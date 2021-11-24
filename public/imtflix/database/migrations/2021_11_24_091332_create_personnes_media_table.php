@@ -15,8 +15,10 @@ class CreatePersonnesMediaTable extends Migration
     {
         Schema::create('personnes_media', function (Blueprint $table) {
             $table->id('id_personne_media');
-            $table->foreignKey('id_media');
-            $table->foreignKey('id_personne');
+            $table->unsignedBigInteger('id_media');
+            $table->foreign('id_media')->references('id_media')->on('medias')->onDelete('restrict')->onUpdate('restrict');
+            $table->unsignedBigInteger('id_personne');
+            $table->foreign('id_personne')->references('id_personne')->on('personnes')->onDelete('restrict')->onUpdate('restrict');
             $table->timestamps();
         });
     }

@@ -15,8 +15,10 @@ class CreatePlaylistsMediaTable extends Migration
     {
         Schema::create('playlists_media', function (Blueprint $table) {
             $table->id('id_playlist_media');
-            $table->foreignKey('id_media');
-            $table->foreignKey('id_playlist');
+            $table->unsignedBigInteger('id_media');
+            $table->foreign('id_media')->references('id_media')->on('medias')->onDelete('restrict')->onUpdate('restrict');
+            $table->unsignedBigInteger('id_playlist');
+            $table->foreign('id_playlist')->references('id_playlist')->on('playlists')->onDelete('restrict')->onUpdate('restrict');
             $table->timestamps();
         });
     }

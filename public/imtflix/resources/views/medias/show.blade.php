@@ -12,38 +12,38 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="row text-white">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Nom:</strong>
-                {{ $movie->name }}
+                {{ $media->titre }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Details:</strong>
-                {{ $movie->detail }}
+                {{ $media->description }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Année:</strong>
-                {{ $movie->annee }}
+                {{ $media->annee }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Genre:</strong>
-
-                 {{ $movie->categorie }}
+                 {{ $media->type->nom_type }}
             </div>
         </div>
-        <div class="select">
-            <select name="category_id">
-                @foreach($categories as $category)
-                    <option value="{{ $movie->category_id }}">{{ $category->name }}</option>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Categorie(s) :</strong>
+                @foreach($media->categories as $categorie)
+                    {{ $categorie->name }}<br>
                 @endforeach
-            </select>
+            </div>
         </div>
     </div>
 @endsection

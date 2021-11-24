@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Media;
 use App\Models\Categorie;
+use App\Models\CategorieMedia;
+use App\Models\Type;
 use Illuminate\Http\Request;
 
 class MediasController extends Controller
@@ -15,8 +17,7 @@ class MediasController extends Controller
      */
     public function index()
     {
-        $medias = Media::with('getCategoriesOfMedias')->latest()->paginate(5);
-
+        $medias = Media::with('categories','type')->latest()->paginate(5);
 
         return view('medias.index',compact('medias'))
         ->with('i', (request()->input('page', 1) - 1) * 5);
@@ -30,7 +31,9 @@ class MediasController extends Controller
     public function create()
     {
         $categories = Categorie::all();
-        return view('medias.create',compact('categories'));
+        $types = Type::all();
+
+        return view('medias.create',compact('categories','types'));
     }
 
     /**
@@ -41,16 +44,18 @@ class MediasController extends Controller
      */
     public function store(Request $request)
     {
+
         $request->validate([
             'titre' => 'required',
             'description' => 'required',
             'annee' => 'required',
-            'image' => 'required',
+            // 'image' => 'required',
             'id_categorie' => 'required',
+            'id_type'=> 'required',
         ]);
 
-
         Media::create($request->all());
+        // CategorieMedia::create($request->all());
 
         return redirect()->route('medias.index')->with('success','Film ajouté avec succés.');
     }
@@ -63,8 +68,9 @@ class MediasController extends Controller
      */
     public function show(Media $media)
     {
-      //  $category = $movie->category->name;
-        return view('medias.show',compact('media', 'category'));
+        $media = $media->load('categories');
+
+        return view('medias.show',compact('media'));
     }
 
     /**
@@ -108,6 +114,7 @@ class MediasController extends Controller
     public function destroy(Media $media)
     {
         $media->delete();
+        //attention destray aussi le donnée de categorie_media
 
         return redirect()->route('medias.index')->with('success','film supprimé avec success');
     }

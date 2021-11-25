@@ -33,7 +33,7 @@
 
 </head>
 <body>
-
+	
 	<!--PreLoader-->
     <div class="loader">
         <div class="loader-inner">
@@ -41,7 +41,7 @@
         </div>
     </div>
     <!--PreLoader Ends-->
-
+	
 	<!-- header -->
 	<div class="top-header-area" id="sticker">
 		<div class="container">
@@ -59,7 +59,7 @@
 						<!-- menu start -->
 						<nav class="main-menu">
 							<ul>
-
+								
 								<li ><a href="film.html">Film</a>
 									<ul class="sub-menu">
 										<li><a href="film.html">Film</a></li>
@@ -82,23 +82,23 @@
 								</li>
 								<li> <a href="Connexion.html">Admin</a>
 									<ul class="sub-menu">
-										<li><a href="gestion_utilisateurs">Gestion des Utilisateurs</a></li>
-                                        <li><a href="gestion_medias">Gestion des Médias</a></li>
-                                    </ul>
+										<li><a href="gestion_utilisateurs.html">Gestion Utilisateurs</a></li>
+									</ul>
 								</li>
 								<li> <a href="/login">Se Connecter</a>
 									<ul class="sub-menu">
-										<li><a href="Connexion.html">Connexion</a></li>
-										<li><a href="Connexion.html">Inscription</a></li>
+										<li><a href="/login">Connexion</a></li>
+										<li><a href="/register">Inscription</a></li>
+										<li><a href="profil.html">Mon Profil</a></li>
 									</ul>
 								</li>
-
+							
 								<li>
 									<div class="header-icons">
 										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
 									</div>
 								</li>
-
+								
 							</ul>
 						</nav>
 						<a class="mobile-show search-bar-icon" href="#"><i class="fas fa-search"></i></a>
@@ -110,7 +110,7 @@
 		</div>
 	</div>
 	<!-- end header -->
-
+	
 	<!-- search area -->
 	<div class="search-area">
 		<div class="container">
@@ -130,32 +130,32 @@
 	</div>
 	<!-- end search area -->
 
-
+	
 
 	<header class="py-5 bg-image-full" style="background-image: url('https://panthea.com/wp-content/uploads/2019/05/Panthea-Theater.jpg')">
 		<div class="text-center my-5">
-
+			
 			 <!-- hero area -->
-
-
+		  
+								
 		  <!-- Content section | connexion-->
-
+          
 		  <section class="py-5">
 			  <div class="container my-5">
 				  <div class="row justify-content-center">
 					  <div class="col-lg-6">
 						  <div class="mb-3">
-
-
+	
+	
 							<div class="col-lg-8 offset-lg-2 text-center">
 								<div class="breadcrumb-text">
-                                    @yield('content')
-
+                                    @yield('content')				
+							
 								</div>
 							</div>
 						</div>
-
-
+	
+	
 					  </div>
 				  </div>
 			  </div>
@@ -169,7 +169,7 @@
                     <div class="col-lg-12">
                         <div class="logo-carousel-inner">
 							@yield("logo carousel")
-
+                            
                         </div>
                     </div>
                 </div>
@@ -182,7 +182,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-8 offset-lg-2 text-center">
-					<div class="section-title">
+					<div class="section-title">	
 						@yield("product section titre")
 					</div>
 				</div>
@@ -190,7 +190,7 @@
 
 			<div class="row">
 				@yield("product section content")
-
+				
 			</div>
 		</div>
 	</div>
@@ -200,10 +200,10 @@
 
 	<!-- testimonail-section -->
 	<div class="py-5 bg-image-full" style="background-image: url('https://panthea.com/wp-content/uploads/2019/05/Panthea-Theater.jpg')">
-
+		
 		<div class="row">
 			<div class="col-lg-8 offset-lg-2 text-center">
-				<div class="section-title">
+				<div class="section-title">	
 					@yield("testimonail-section title")
 				</div>
 			</div>
@@ -231,7 +231,7 @@
 
 			<div class="row">
 				<div class="col-lg-8 offset-lg-2 text-center">
-					<div class="section-title">
+					<div class="section-title">	
 						@yield("latest news title")
 					</div>
 				</div>
@@ -297,7 +297,7 @@
 		</div>
 	</div>
 	<!-- end footer -->
-
+	
 	<!-- copyright -->
 	<div class="copyright">
 		<div class="container">
@@ -320,7 +320,7 @@
 		</div>
 	</div>
 	<!-- end copyright -->
-
+	
 	<!-- jquery -->
 	<script src="{{asset('assets/js/jquery-1.11.3.min.js')}}"></script>
 	<!-- bootstrap -->

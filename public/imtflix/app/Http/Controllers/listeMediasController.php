@@ -4,8 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Film;
 
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use App\Models\User;
+use Error;
 
 class listeMediasController extends Controller
 {
@@ -38,15 +41,36 @@ class listeMediasController extends Controller
         $credentials = $request->only('email','password');
 
         if(Auth::attempt($credentials)){
-            return redirect('listeMedias');
+            return view('listeMedias');
         }
         else{
             return redirect('login');
         }
         //return view('login');
     }
+
+    // register
+
     function afficherRegister(){
         return view('register');
+    }
+
+    function postRegister(Request $request){
+        $data = $request->all();
+
+        try {
+            User::create([
+                'name' => $data['name'],
+                'email' => $data['email'],
+                'password' => Hash::make($data['password']),
+            ]);
+            return redirect('login');
+       }
+       catch(Error $error) {
+            return redirect('register');
+           //return view('error');
+
+         }
     }
 
 }

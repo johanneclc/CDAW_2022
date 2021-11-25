@@ -29,10 +29,7 @@ Route::get('/monProfil/{id_utilisateur}', 'App\Http\controllers\userController@a
 // Route::post('creerFilm','App\Http\controllers\listeMediasController@afficherFormulaire');
 
 //route CRUD films
-Route::resource('gestion_medias', MediasController::class);
-
-//route CRUD utilisateurs
-Route::resource('gestion_utilisateurs', UserController::class);
+Route::resource('medias', MediasController::class);
 // Route::get('creerFilm', 'App\Http\controllers\MediasController@store');
 
 // Route::get('category/{name}/movies', [MoviesController::class, 'index'])->name('movies.category');
@@ -51,4 +48,7 @@ Route::post('/login',
 
 // register
 Route::get('/register',
-            'App\Http\controllers\listeMediasController@afficherRegister');
+            'App\Http\controllers\listeMediasController@afficherRegister')->name('afficherregister');
+
+Route::post('/register',
+            'App\Http\controllers\listeMediasController@postRegister')->name('register');

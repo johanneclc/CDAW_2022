@@ -20,8 +20,8 @@ class CreateMediasTable extends Migration
             $table->string('description');
             $table->string('image');
             $table->year('annee');
-            $table->unsignedBigInteger('id_type_media');
-            $table->foreign('id_type_media')->references('id_type')->on('types')->onDelete('restrict')->onUpdate('restrict');
+            $table->unsignedBigInteger('id_type');
+            $table->foreign('id_type')->references('id_type')->on('types')->onDelete('restrict')->onUpdate('restrict');
             $table->timestamps();
         });
     }

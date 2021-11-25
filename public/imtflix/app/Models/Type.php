@@ -9,6 +9,7 @@ class Type extends Model
 {
     use HasFactory;
 
+    protected $table = 'types';
     protected $primaryKey = "id_type";
 
     public function getMediasOfTypes(){

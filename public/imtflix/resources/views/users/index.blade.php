@@ -7,7 +7,7 @@
             <div class="pull-left">
             </div>
             <div class="pull-right">
-                <a class="btn btn-success" href="{{ route('gestion_medias.create') }}"> Ajouter un film</a>
+                <a class="btn btn-success" href="{{ route('users.create') }}"> Ajouter un film</a>
             </div>
         </div>
     </div>
@@ -29,28 +29,28 @@
 
             <th width="280px">Action</th>
         </tr>
-        @foreach ($medias as $media)
+        @foreach ($users as $user)
         <tr>
             <td>{{ ++$i }}</td>
             <td>
-                    @foreach($media->categories as $categorie)
+                    @foreach($user->categories as $categorie)
                         {{$categorie->nom_categorie}}
                     @endforeach
             </td>
-            <td>{{ $media->titre }}</td>
-            <td>{{ $media->description }}</td>
-            <td>{{ $media->annee }}</td>
+            <td>{{ $user->titre }}</td>
+            <td>{{ $user->description }}</td>
+            <td>{{ $user->annee }}</td>
 
-            <td>{{ $media->type->nom_type }}</td>
+            <td>{{ $user->type->nom_type }}</td>
             <td>
-                <form action="{{ route('gestion_medias.destroy',$media->id_media) }}" method="POST">
+                <form action="{{ route('users.destroy',$user->id_user) }}" method="POST">
 
-                    <a class="btn btn-info" href="{{ route('gestion_medias.show',$media->id_media) }}">
+                    <a class="btn btn-info" href="{{ route('users.show',$user->id_user) }}">
                         <i class="fas fa-eye"></i>
                         Show
                     </a>
 
-                    <a class="btn btn-primary" href="{{ route('gestion_medias.edit',$media->id_media) }}">
+                    <a class="btn btn-primary" href="{{ route('users.edit',$user->id_user) }}">
                         <i class="fas fa-pen"></i>
                         Edit
                     </a>
@@ -67,6 +67,6 @@
         @endforeach
     </table>
 
-    {!! $medias->links() !!}
+    {!! $users->links() !!}
 
 @endsection

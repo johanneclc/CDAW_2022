@@ -82,13 +82,13 @@
 								</li>
 								<li> <a href="Connexion.html">Admin</a>
 									<ul class="sub-menu">
-										<li><a href="gestion_utilisateurs">Gestion Utilisateurs</a></li>
-                                        <li><a href="gestion_medias">Gestion des Médias</a></li>									</ul>
+										<li><a href="gestion_utilisateurs.html">Gestion Utilisateurs</a></li>
+									</ul>
 								</li>
-								<li> <a href="/login">Se Connecter</a>
+								<li> <a href="Connexion.html">Se Connecter</a>
 									<ul class="sub-menu">
-										<li><a href="/login">Connexion</a></li>
-										<li><a href="/register">Inscription</a></li>
+										<li><a href="Connexion.html">Connexion</a></li>
+										<li><a href="Connexion.html">Inscription</a></li>
 										<li><a href="profil.html">Mon Profil</a></li>
 									</ul>
 								</li>

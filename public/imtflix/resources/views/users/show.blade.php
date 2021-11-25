@@ -7,7 +7,7 @@
                 <h2> Afficher film</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('users.index') }}"> retrour</a>
+                <a class="btn btn-primary" href="{{ route('gestion_utilisateurs.index') }}"> retrour</a>
             </div>
         </div>
     </div>

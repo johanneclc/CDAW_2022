@@ -7,7 +7,7 @@
             <div class="pull-left">
             </div>
             <div class="pull-right">
-                <a class="btn btn-success" href="{{ route('users.create') }}"> Ajouter un film</a>
+                <a class="btn btn-success" href="{{ route('gestion_utilisateurs.create') }}"> Ajouter un utilisateur</a>
             </div>
         </div>
     </div>
@@ -21,10 +21,10 @@
     <table class="table table-bordered text-white">
         <tr>
             <th>No</th>
-            <th>Catégorie</th>
-            <th>Titre</th>
-            <th>Déscription</th>
-            <th>Année</th>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Mail</th>
+            <th>Role</th>
             <th>Genre</th>
 
             <th width="280px">Action</th>
@@ -32,25 +32,21 @@
         @foreach ($users as $user)
         <tr>
             <td>{{ ++$i }}</td>
-            <td>
-                    @foreach($user->categories as $categorie)
-                        {{$categorie->nom_categorie}}
-                    @endforeach
-            </td>
-            <td>{{ $user->titre }}</td>
-            <td>{{ $user->description }}</td>
-            <td>{{ $user->annee }}</td>
+            <td>{{ $user->name }}</td>
+            <td>{{ $user->name }}</td>
+            <td>{{ $user->email }}</td>
+            <td></td>
 
-            <td>{{ $user->type->nom_type }}</td>
+            <td></td>
             <td>
-                <form action="{{ route('users.destroy',$user->id_user) }}" method="POST">
+                <form action="{{ route('gestion_utilisateurs.destroy',$user->id_user) }}" method="POST">
 
-                    <a class="btn btn-info" href="{{ route('users.show',$user->id_user) }}">
+                    <a class="btn btn-info" href="{{ route('gestion_utilisateurs.show',$user->id_user) }}">
                         <i class="fas fa-eye"></i>
                         Show
                     </a>
 
-                    <a class="btn btn-primary" href="{{ route('users.edit',$user->id_user) }}">
+                    <a class="btn btn-primary" href="{{ route('gestion_utilisateurs.edit',$user->id_user) }}">
                         <i class="fas fa-pen"></i>
                         Edit
                     </a>
@@ -67,6 +63,7 @@
         @endforeach
     </table>
 
-    {!! $users->links() !!}
+    {{-- {!! $users->links() !!} --}}
+
 
 @endsection

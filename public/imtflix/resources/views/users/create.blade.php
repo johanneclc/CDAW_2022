@@ -4,7 +4,7 @@
 <div class="row">
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
-            <h2 class="text-white">Créer un média</h2>
+            <h2 class="text-white">Gestion des utilisateur</h2>
         </div>
     </div>
 </div>
@@ -20,7 +20,7 @@
     </div>
 @endif
 
-<form action="{{ route('users.store') }}" method="POST">
+<form action="{{ route('gestion_utilisateurs.store') }}" method="POST">
     @csrf
 
      <div class="row">
@@ -74,7 +74,7 @@
 
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                 <button type="submit" class="btn btn-primary">Envoyer</button>
-                <a class="btn btn-primary" href="{{ route('users.index') }}"> Retour</a>
+                <a class="btn btn-primary" href="{{ route('gestion_utilisateurs.index') }}"> Retour</a>
         </div>
 
     </div>

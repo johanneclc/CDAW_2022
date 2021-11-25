@@ -20,6 +20,8 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
+            $table->unsignedBigInteger('id_role_utilisateur');
+            $table->foreign('id_role_utilisateur')->references('id_role_utilisateur')->on('roles_utilisateur')->onDelete('restrict')->onUpdate('restrict');
             $table->timestamps();
         });
     }

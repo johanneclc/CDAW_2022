@@ -31,7 +31,7 @@
         </tr>
         @foreach ($users as $user)
         <tr>
-            <td>{{ ++$i }}</td>
+            <td>{{ $user->id }}</td>
             <td>{{ $user->name }}</td>
             <td>{{ $user->name }}</td>
             <td>{{ $user->email }}</td>
@@ -39,7 +39,7 @@
 
             <td></td>
             <td>
-                <form action="{{ route('gestion_utilisateurs.destroy',$user->id_user) }}" method="POST">
+                {{-- <form action="{{ route('gestion_utilisateurs.destroy',$user->id_user) }}" method="POST">
 
                     <a class="btn btn-info" href="{{ route('gestion_utilisateurs.show',$user->id_user) }}">
                         <i class="fas fa-eye"></i>
@@ -55,9 +55,9 @@
                     @method('DELETE')
                     <button type="submit" class="btn btn-danger">
                         <i class="fas fa-trash"></i>
-                        Delete
+                        Bannir
                     </button>
-                </form>
+                </form> --}}
             </td>
         </tr>
         @endforeach

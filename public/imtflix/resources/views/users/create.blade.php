@@ -4,7 +4,7 @@
 <div class="row">
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
-            <h2 class="text-white">Gestion des utilisateur</h2>
+            <h2 class="text-white">Ajouter un utilisateur</h2>
         </div>
     </div>
 </div>

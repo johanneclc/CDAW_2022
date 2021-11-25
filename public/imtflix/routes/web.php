@@ -47,4 +47,7 @@ Route::post('/login',
 
 // register
 Route::get('/register',
-            'App\Http\controllers\listeMediasController@afficherRegister');
+            'App\Http\controllers\listeMediasController@afficherRegister')->name('afficherregister');
+
+Route::post('/register',
+            'App\Http\controllers\listeMediasController@postRegister')->name('register');

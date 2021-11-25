@@ -87,8 +87,8 @@
 								</li>
 								<li> <a href="/login">Se Connecter</a>
 									<ul class="sub-menu">
-										<li><a href="Connexion.html">Connexion</a></li>
-										<li><a href="Connexion.html">Inscription</a></li>
+										<li><a href="/login">Connexion</a></li>
+										<li><a href="/register">Inscription</a></li>
 										<li><a href="profil.html">Mon Profil</a></li>
 									</ul>
 								</li>

@@ -139,7 +139,7 @@
              <div id="app">
 
                     <!-- {{ config('app.name')}} -->
-                
+
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
@@ -184,7 +184,7 @@
                     </ul>
                 </div>
             </div>
-        
+
 
         <main class="py-4">
             @yield('content')
@@ -193,8 +193,8 @@
 
 		  <!-- Content section | connexion-->
 
-	
-		  
+
+
 		  </header>
 
 

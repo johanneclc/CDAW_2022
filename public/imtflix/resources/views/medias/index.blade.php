@@ -34,7 +34,7 @@
             <td>{{ ++$i }}</td>
             <td>
                     @foreach($media->categories as $categorie)
-                        {{$categorie->nom_categorie}}
+                        {{$categorie->name}}
                     @endforeach
             </td>
             <td>{{ $media->titre }}</td>

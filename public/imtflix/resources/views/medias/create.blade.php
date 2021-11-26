@@ -56,8 +56,11 @@
                 <strong class="text-white">Genre Film:</strong>
                     @foreach($categories as $categorie)
                       <div>
-                        <input class="form-check-input" type="checkbox" id="cat_{{ $categorie->id_categorie }}" value="{{ $categorie->id_categorie }}">
-                        <label class="form-check-label text-white" for="cat_{{ $categorie->id_categorie }}">{{ $categorie->name }}</label>
+                        <input class="form-check-input" type="checkbox" id="cat_{{ $categorie->id_categorie }}"
+                        value="{{ $categorie->id_categorie }}" name="{{ $categorie->id_categorie }}">
+                        <label class="form-check-label text-white" for="cat_{{ $categorie->id_categorie }}">
+                            {{ $categorie->name }}
+                        </label>
                       </div>
                     @endforeach
                 </select>

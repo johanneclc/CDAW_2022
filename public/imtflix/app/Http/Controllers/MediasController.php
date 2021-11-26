@@ -50,12 +50,20 @@ class MediasController extends Controller
             'description' => 'required',
             'annee' => 'required',
             // 'image' => 'required',
-            'id_categorie' => 'required',
             'id_type'=> 'required',
         ]);
 
         Media::create($request->all());
-        // CategorieMedia::create($request->all());
+        $id_media = Media::latest()->first()->id_media;;
+
+        $categories = Categorie::all();
+
+        foreach($categories as $categorie){
+            if($request->input($categorie->id_categorie)){
+                CategorieMedia::create(['id_media'=>$id_media,
+                'id_categorie'=> $categorie->id_categorie]);
+            }
+        }
 
         return redirect()->route('medias.index')->with('success','Film ajouté avec succés.');
     }

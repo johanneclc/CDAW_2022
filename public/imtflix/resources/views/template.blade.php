@@ -60,7 +60,7 @@
 						<nav class="main-menu">
 							<ul>
 
-								<li ><a href="film.html">Film</a>
+								<li ><a href="films">Film</a>
 									<ul class="sub-menu">
 										<li><a href="film.html">Film</a></li>
 									</ul>

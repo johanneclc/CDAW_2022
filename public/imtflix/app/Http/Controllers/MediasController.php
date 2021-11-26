@@ -126,4 +126,19 @@ class MediasController extends Controller
 
         return redirect()->route('medias.index')->with('success','film supprimé avec success');
     }
+
+    public function afficherFilms(){
+        $films = Media::where('id_type',"1")->orderBy('annee','desc')->get();
+        return view("films", compact('films'));
+    }
+
+    public function afficherSeries(){
+        $series = Media::where('id_type',"2")->orderBy('annee','desc')->get();
+        return view("series", compact('series'));
+    }
+
+    public function afficherAnimes(){
+        $animes = Media::where('id_type',"3")->orderBy('annee','desc')->get();
+        return view("animes", compact('animes'));
+    }
 }

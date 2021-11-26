@@ -19,6 +19,9 @@ use App\Http\Controllers\UserController;
 Route::get('/',
             'App\Http\controllers\listeMediasController@afficherAccueil');
 
+Route::get('/films',
+            'App\Http\controllers\MediasController@afficherFilms');
+
 // Profil Utilisateur
 Route::get('/monProfil/{id_utilisateur}', 'App\Http\controllers\userController@afficherMonProfil');
 

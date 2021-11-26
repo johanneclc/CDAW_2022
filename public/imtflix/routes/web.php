@@ -53,3 +53,23 @@ Route::get('/register',
 
 Route::post('/register',
             'App\Http\controllers\listeMediasController@postRegister')->name('register');
+
+// Deconnexion
+Route::post('/deconnexion',
+'App\Http\controllers\listeMediasController@destroy')->name('deconnexion');
+
+// Route::middleware('auth')->group(function () {
+//     Route::get('/playlist', function ()    {
+//         // Réservé aux utilisateurs authentifiés
+//     });
+//     Route::get('/monprofil', function () {
+//         // Réservé aux utilisateurs authentifiés
+//     });
+//     Route::post('/deconnexion','App\Http\controllers\listeMediasController@destroy')->name('deconnexion');
+// });
+
+// Route::middleware('guest')->group(function () {
+//     Route::get('/login', function ()    {
+//         // Réservé aux utilisateurs authentifiés
+//     });
+// });

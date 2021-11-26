@@ -24,6 +24,7 @@ function editComment(id){
     let p = comment.getElementsByTagName('p');
     document.getElementById('id_comm').innerHTML = id; 
     document.getElementById('editComm').innerHTML  = p[0].innerHTML;
+    console.log(document.getElementById('editComm').innerHTML);
 }
 
 function updateComment(){

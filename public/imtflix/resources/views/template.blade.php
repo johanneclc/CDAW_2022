@@ -85,11 +85,12 @@
 										<li><a href="gestion_utilisateurs">Gestion Utilisateurs</a></li>
                                         <li><a href="gestion_medias">Gestion des Médias</a></li>									</ul>
 								</li>
-								<li> <a href="/login">Se Connecter</a>
+								<li> <a href="login">Se Connecter</a>
 									<ul class="sub-menu">
-										<li><a href="/login">Connexion</a></li>
-										<li><a href="/register">Inscription</a></li>
+										<li><a href="login">Connexion</a></li>
+										<li><a href="register">Inscription</a></li>
 										<li><a href="profil.html">Mon Profil</a></li>
+                                        <li><a href="deconnexion">Deconnexion</a></li>
 									</ul>
 								</li>
 

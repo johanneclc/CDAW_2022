@@ -12,10 +12,24 @@ class ExampleTest extends TestCase
      *
      * @return void
      */
-    public function test_example()
+    public function test_route()
     {
         $response = $this->get('/');
-
         $response->assertStatus(200);
+
+        $response = $this->get('/login');
+        $response->assertStatus(200);
+
+        $response = $this->get('/register');
+        $response->assertStatus(200);
+
+        $response = $this->get('/gestion_utilisateurs');
+        $response->assertStatus(200);
+
+        $response = $this->get('/gestion_medias');
+        $response->assertStatus(200);
+
     }
+
+
 }

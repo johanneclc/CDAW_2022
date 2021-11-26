@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Film;
 
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
@@ -20,14 +19,10 @@ class listeMediasController extends Controller
         return view("listeMedias", ['params'=>$params]);
     }
 
-   
+
 
     function afficherFormulaire(){
         return view('formulaireFilm');
-    }
-
-    function afficheMediasCategories(){
-        $films = Film::with(relations: "getFilmsCategories")->get();
     }
     function afficherAccueil(){
         return view('listeMedias');
@@ -71,6 +66,14 @@ class listeMediasController extends Controller
            //return view('error');
 
          }
+    }
+
+    public function destroy(Request $request)
+    {
+        $this->guard->logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect('');
     }
 
 }

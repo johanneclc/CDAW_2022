@@ -23,7 +23,7 @@ Route::get('/films',
             'App\Http\controllers\MediasController@afficherFilms');
 
 // Profil Utilisateur
-Route::get('/monProfil/{id_utilisateur}', 'App\Http\controllers\userController@afficherMonProfil');
+Route::get('/mon_profil', 'App\Http\controllers\userController@afficherMonProfil');
 
 // Admin gestion utilisateurs
 

@@ -90,7 +90,7 @@
 									<ul class="sub-menu">
 										<li><a href="login">Connexion</a></li>
 										<li><a href="register">Inscription</a></li>
-										<li><a href="profil.html">Mon Profil</a></li>
+										<li><a href="mon_profil">Mon Profil</a></li>
                                         <li><a href="deconnexion">Deconnexion</a></li>
 									</ul>
 								</li>

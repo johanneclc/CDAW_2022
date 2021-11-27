@@ -21,8 +21,8 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('chemin_avatar');
             $table->rememberToken();
-            $table->unsignedBigInteger('id_role_utilisateur');
-            $table->foreign('id_role_utilisateur')->references('id_role_utilisateur')->on('roles_utilisateur')->onDelete('restrict')->onUpdate('restrict');
+            // $table->unsignedBigInteger('id_role_utilisateur');
+            // $table->foreign('id_role_utilisateur')->references('id_role_utilisateur')->on('roles_utilisateur')->onDelete('restrict')->onUpdate('restrict');
             $table->timestamps();
         });
     }

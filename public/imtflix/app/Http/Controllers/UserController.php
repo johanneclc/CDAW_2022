@@ -88,9 +88,9 @@ class UserController extends Controller
         //
     }
 
-    public function afficherMonProfil(){
+    public function afficherMonProfil(User $user){
         $user = Auth::user();
 
-        return $user;
+        return view('mon_profil');
     }
 }

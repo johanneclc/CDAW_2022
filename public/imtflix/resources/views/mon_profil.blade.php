@@ -6,7 +6,16 @@
 				  <div class="row justify-content-center">
 					  <div class="col-lg-6">
 						  <div class="mb-3">
-	
+                          @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                          @endif
 	
 							<div class="hero-text text-white">
 								<div class="hero-text-tablecell">
@@ -18,14 +27,16 @@
 										<div class="client-meta">
 											<h3 class="text-white">Pseudo <span class="text-white">{{ Auth::user()->name }}</span></h3>
 											<span id="mail">{{ Auth::user()->email }}</span>
-											<p class="testimonial-body">
-												" Sed ut perspiciatis unde omnis iste natus error veritatis et  quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium "
-											</p>
+											
 											<div class="last-icon">
 												<i class="fas fa-quote-right"></i>
 											</div>
+                                            
 											<div class="hero-btns">
-												<a href="profil.html" class="boxed-btn">Modifier le profil</a>
+												<a href="modifier_profil" class="boxed-btn">Modifier leee profil</a>
+                                                <div class="pull-right">
+                                                    <a class="btn btn-primary" href="listeMedias"> Back</a>
+                                                </div>
 											</div>
 										</div>
 									</div>
@@ -37,6 +48,39 @@
 					  </div>
 				  </div>
 			  </div>
+
+
+        <form action="{{ route('users.update', Auth::user()->id) }}" method="POST" enctype="multipart/form-data"> 
+        @csrf
+        @method('PUT')
+     
+         <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Name:</strong>
+                    <input type="text" name="name" value="{{ Auth::user()->name }}" class="form-control" placeholder="Name">
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>email:</strong>
+                    <textarea class="form-control" style="height:150px" name="email" placeholder="Email">{{ Auth::user()->email }}</textarea>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Image:</strong>
+                    <input type="file" name="chemin_avatar" class="form-control" placeholder="chemin_avatar">
+                    <img src="/chemin_avatar/{{ Auth::user()->chemin_avatar }}" width="300px">
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+     
+    </form>
+
 		  </section>
 
 <!-- <div class="row"> 

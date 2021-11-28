@@ -24,7 +24,9 @@ Route::get('/films',
 
 // Profil Utilisateur
 Route::get('/mon_profil', 'App\Http\controllers\userController@afficherMonProfil');
-Route::put('/modifier_profil','App\Http\controllers\userController@modifier_profil')->name('modifier_profil');
+Route::put('/modifier_profil','App\Http\controllers\userController@update')->name('modifier_profil');
+Route::resource('users', userController::class);
+
 // Admin gestion utilisateurs
 
 // Formulaire de création de film

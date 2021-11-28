@@ -65,17 +65,6 @@ class UserController extends Controller
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\User  $user
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, User $user)
-    {
-        //
-    }
 
     /**
      * Remove the specified resource from storage.
@@ -94,7 +83,15 @@ class UserController extends Controller
         return view('mon_profil');
     }
 
-    public function modifier_profil(Request $request, User $user){
+        /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\User  $user
+     * @return \Illuminate\Http\Response
+     */
+   
+    public function update(Request $request, User $user){
         $request->validate([
             'name' => 'required',
             'email' => 'required'
@@ -113,6 +110,6 @@ class UserController extends Controller
           
         $user->update($input);
     
-        return view('mon_profil')->with('success','Profile updated successfully');
+        return view('mon_profil');
     }
 }

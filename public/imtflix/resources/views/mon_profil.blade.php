@@ -48,8 +48,7 @@
 											<div class="hero-btns">
 												<a href="listeMedias" class="boxed-btn">Retour</a>
                                                 <button type="submit" class="boxed-btn">Modifier Profile</button>
-
-                                                
+                                            
 											</div>
 										</div>
 									</div>

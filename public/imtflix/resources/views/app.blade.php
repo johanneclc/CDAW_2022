@@ -87,15 +87,14 @@
 								</li>
 								<li> <a href="login">Se Connecter</a>
 									<ul class="sub-menu">
+										
 										<li><a href="login">Connexion</a></li>
 										<li><a href="register">Inscription</a></li>
-										<li><a href="mon_profil">Mon Profil</a></li>
-                                        <li><a href="deconnexion">Deconnexion</a></li>
+                                        <li><a href="mon_profil">Profil </a></li>
+										<li><a href="deconnexion">Deconnexion </a></li>
+										
 									</ul>
 								</li>
-								<li>
-									if 
-								</li>	
 
 								<li>
 									<div class="header-icons">

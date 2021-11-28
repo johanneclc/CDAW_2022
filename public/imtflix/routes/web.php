@@ -23,9 +23,9 @@ Route::get('/films',
             'App\Http\controllers\MediasController@afficherFilms');
 
 // Profil Utilisateur
-Route::get('/mon_profil', 'App\Http\controllers\userController@afficherMonProfil')->middleware('auth');
-Route::put('/modifier_profil','App\Http\controllers\userController@update')->name('modifier_profil')->middleware('auth');
-Route::resource('users', userController::class)->middleware('auth');
+Route::get('/mon_profil', 'App\Http\controllers\userController@afficherMonProfil');
+Route::put('/modifier_profil','App\Http\controllers\userController@update')->name('modifier_profil');
+Route::resource('users', userController::class);
 
 // Admin gestion utilisateurs
 
@@ -35,7 +35,7 @@ Route::resource('users', userController::class)->middleware('auth');
 
 //route CRUD films
 Route::resource('gestion_medias', MediasController::class)->middleware('auth');
-Route::resource('gestion_utilisateurs', UserController::class)->middleware('auth');
+Route::resource('gestion_utilisateurs', UserController::class);
 // Route::get('creerFilm', 'App\Http\controllers\MediasController@store');
 
 // Route::get('category/{name}/movies', [MoviesController::class, 'index'])->name('movies.category');

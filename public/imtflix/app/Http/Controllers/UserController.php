@@ -94,9 +94,25 @@ class UserController extends Controller
         return view('mon_profil');
     }
 
-    public function modifier_profil(User $user){
-        $user = Auth::user();
-
-        return view('mon_profil');
+    public function modifier_profil(Request $request, User $user){
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required'
+        ]);
+  
+        $input = $request->all();
+  
+        if ($chemin_avatar = $request->file('chemin_avatar')) {
+            $destinationPath = 'chemin_avatar/';
+            $profileImage = date('YmdHis') . "." . $chemin_avatar->getClientOriginalExtension();
+            $chemin_avatar->move($destinationPath, $profileImage);
+            $input['chemin_avatar'] = "$profileImage";
+        }else{
+            unset($input['chemin_avatar']);
+        }
+          
+        $user->update($input);
+    
+        return view('mon_profil')->with('success','Profile updated successfully');
     }
 }

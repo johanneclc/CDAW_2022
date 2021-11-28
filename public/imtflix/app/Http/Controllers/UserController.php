@@ -93,4 +93,10 @@ class UserController extends Controller
 
         return view('mon_profil');
     }
+
+    public function modifier_profil(User $user){
+        $user = Auth::user();
+
+        return view('mon_profil');
+    }
 }

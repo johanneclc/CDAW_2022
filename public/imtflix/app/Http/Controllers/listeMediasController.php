@@ -72,13 +72,14 @@ class listeMediasController extends Controller
         return redirect('login')->with('success','user created successfully.');*/
 
         $data = $request->all();
+        $credentials = $request->only('name','email','password');
 
         try {
             User::create([
                 'name' => $data['name'],
                 'email' => $data['email'],
                 'password' => Hash::make($data['password']),
-                'chemin_avatar' => $data['chemin_avatar'],
+                'chemin_avatar' => $data->image['chemin_avatar'],
             ]);
             if ($chemin_avatar = $request->file('chemin_avatar')) {
                 $destinationPath = 'chemin_avatar/';
@@ -87,7 +88,7 @@ class listeMediasController extends Controller
                 $input['chemin_avatar'] = "$profileImage";
             }
 
-            return redirect('login');
+            return redirect('login')->with('image',$imageName);;
        }
        catch(Error $error) {
             return redirect('register');

@@ -24,7 +24,7 @@ Route::get('/films',
 
 // Profil Utilisateur
 Route::get('/mon_profil', 'App\Http\controllers\userController@afficherMonProfil');
-
+Route::put('/modifier_profil','App\Http\controllers\userController@modifier_profil')->name('modifier_profil');
 // Admin gestion utilisateurs
 
 // Formulaire de création de film
@@ -76,3 +76,4 @@ Route::post('/deconnexion',
 //         // Réservé aux utilisateurs authentifiés
 //     });
 // });
+

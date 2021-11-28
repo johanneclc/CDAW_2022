@@ -91,8 +91,21 @@
 										<li><a href="login">Connexion</a></li>
 										<li><a href="register">Inscription</a></li>
                                         <li><a href="mon_profil">Profil </a></li>
-										<li><a href="deconnexion">Deconnexion </a></li>
 										
+										<li><a href="deconnexion">Deconnexion1 </a></li>
+										<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('deconnexion') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Deconnexion') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('deconnexion') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </div>
+										
+										<li></li>
 									</ul>
 								</li>
 

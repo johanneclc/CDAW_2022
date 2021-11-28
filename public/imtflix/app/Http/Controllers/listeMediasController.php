@@ -78,12 +78,9 @@ class listeMediasController extends Controller
          }
     }
 
-    public function destroy(Request $request)
+    public function destroy(User $user)
     {
-        $this->guard->logout();
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
-        return redirect('');
+        Auth::logout();
     }
 
 }

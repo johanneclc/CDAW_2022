@@ -69,7 +69,7 @@ class listeMediasController extends Controller
                 $input['chemin_avatar'] = "$profileImage";
             }
 
-            return redirect('login');
+            return view('login');
        }
        catch(Error $error) {
             return redirect('register');

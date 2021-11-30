@@ -12,6 +12,10 @@ class CategorieMedia extends Model
     protected $table = 'categories_media';
     protected $primaryKey = "id_categorie_media";
 
+    protected $filliable = [
+        'id_categorie'
+    ];
+
     protected $guarded = [
         'created_at','update_at'
     ];

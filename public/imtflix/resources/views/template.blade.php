@@ -62,17 +62,17 @@
 
 								<li ><a href="films">Film</a>
 									<ul class="sub-menu">
-										<li><a href="film.html">Film</a></li>
+										<li><a href="films">Film</a></li>
 									</ul>
 								</li>
 								<li ><a href="serie.html">Série</a>
 									<ul class="sub-menu">
-										<li><a href="serie.html">Serie</a></li>
+										<li><a href="series">Serie</a></li>
 									</ul>
 								</li>
-								<li ><a href="manga.html">Manga</a>
+								<li ><a href="manga.html">Animés</a>
 									<ul class="sub-menu">
-										<li><a href="manga.html">Manga</a></li>
+										<li><a href="animes">Animés</a></li>
 									</ul>
 								</li>
 								<li><a href="dessinanime.html">Dessin Animé</a>

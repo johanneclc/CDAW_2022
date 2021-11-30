@@ -20,7 +20,11 @@ Route::get('/',
             'App\Http\controllers\listeMediasController@afficherAccueil');
 
 Route::get('/films',
-            'App\Http\controllers\MediasController@afficherFilms');
+            'App\Http\controllers\MediasController@afficherFilms')->name('films');
+Route::get('/series',
+            'App\Http\controllers\MediasController@afficherSeries')->name('series');
+Route::get('/animes',
+            'App\Http\controllers\MediasController@afficherAnimes')->name('animes');
 
 // Profil Utilisateur
 Route::get('/mon_profil', 'App\Http\controllers\userController@afficherMonProfil');
@@ -28,15 +32,10 @@ Route::put('/modifier_profil','App\Http\controllers\userController@update')->nam
 Route::resource('users', userController::class);
 
 // Admin gestion utilisateurs
-
-// Formulaire de création de film
-// Route::get('/creerFilm', 'App\Http\controllers\listeMediasController@afficherFormulaire');
-// Route::post('creerFilm','App\Http\controllers\listeMediasController@afficherFormulaire');
-
-//route CRUD films
-Route::resource('gestion_medias', MediasController::class)->middleware('auth');
 Route::resource('gestion_utilisateurs', UserController::class);
-// Route::get('creerFilm', 'App\Http\controllers\MediasController@store');
+
+// Adin gestion medias
+Route::resource('gestion_medias', MediasController::class)->middleware('auth');
 
 // Route::get('category/{name}/movies', [MoviesController::class, 'index'])->name('movies.category');
 

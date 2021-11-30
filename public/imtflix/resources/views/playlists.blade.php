@@ -1,61 +1,34 @@
-@extends('templateAccueil',['categories' => $categories])
+@extends('templateAccueil')
 
 @section('content')
-    <h1>Bienvenue {{$user->name}}</h1><br>
+    <h1>Bienvenue</h1><br>
     <h3 class="text-white">Ici, retrouvez une grande selection de films !!!</h3><br>
 @endsection
 
 @section('logo carousel')
-    @foreach ($films as $film)
-        <div class="single-logo-item">
-            <img src="{{ $film->image }}" alt="">
-            <span>{{ $film->titre }}</span>
+@endsection
+
+@section('product section titre')
+    <h3><span class="orange-text">Mes</span> Abonnements</h3>
+@endsection
+
+@section('product section content')
+    @foreach($abonnements as $abonnement)
+        <div class="col-lg-4 col-md-6 text-center">
+            <div class="single-product-item">
+                {{-- <div class="product-image">
+                    <a href="single-product.html"><img src="{{asset('assets/img/products/affiche1.jpg')}}" height="50%" alt=""></a>
+                </div> --}}
+                <h3>{{ $abonnement->nom_playlist }}</h3>
+                <p class="product-price"><span>2018</span> </p>
+                <a href="cart.html" class="cart-btn">Regarder</a>
+            </div>
         </div>
     @endforeach
 @endsection
 
-@section('product section titre')
-    <h3><span class="orange-text">Les plus</span> Regardés</h3>
-    <p>On vous présente une sélection des films, séries ou autres , les plus regardés pendant
-        la dernière période.
-    </p>
-@endsection
-
-@section('product section content')
-    <div class="col-lg-4 col-md-6 text-center">
-        <div class="single-product-item">
-            <div class="product-image">
-                <a href="single-product.html"><img src="{{asset('assets/img/products/affiche1.jpg')}}" height="50%" alt=""></a>
-            </div>
-            <h3>Titanic</h3>
-            <p class="product-price"><span>2018</span> </p>
-            <a href="cart.html" class="cart-btn">Regarder</a>
-        </div>
-    </div>
-    <div class="col-lg-4 col-md-6 text-center">
-        <div class="single-product-item">
-            <div class="product-image">
-                <a href="single-product.html"><img src="{{asset('assets/img/products/affiche2.jpg')}}" height="50%" alt=""></a>
-            </div>
-            <h3>Black X Widow</h3>
-            <p class="product-price"><span>2017</span> </p>
-            <a href="cart.html" class="cart-btn">Regarder</a>
-        </div>
-    </div>
-    <div class="col-lg-4 col-md-6 text-center">
-        <div class="single-product-item">
-            <div class="product-image">
-                <a href="single-product.html"><img src="{{asset('assets/img/products/affiche3.jpg')}}" height="50%" alt=""></a>
-            </div>
-            <h3>Venom</h3>
-            <p class="product-price"><span>2018</span> </p>
-            <a href="cart.html" class="cart-btn">Regarder</a>
-        </div>
-    </div>
-@endsection
-
 @section('testimonail-section title')
-    <h3 class="main-menu"><span class="orange-text">Les Nouveautés </span> </h3>
+    <h3 class="main-menu"><span class="orange-text">Les Playlists de la communauté </span> </h3>
 @endsection
 
 @section('testimonail-section content')
@@ -104,7 +77,7 @@
 @endsection
 
 @section('latest news title')
-    <h3><span class="orange-text">Série</span> Tendances</h3>
+    <h3><span class="orange-text">Mes</span> Playlists</h3>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, fuga quas itaque eveniet beatae optio.</p>
 @endsection
 

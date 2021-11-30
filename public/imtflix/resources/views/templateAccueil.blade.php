@@ -50,7 +50,7 @@
 					<div class="main-menu-wrap">
 						<!-- logo -->
 						<div class="site-logo">
-							<a href="index.html">
+							<a href="index.php">
 								<img src="{{asset('assets/img/logo.png')}}" alt="">
 							</a>
 						</div>
@@ -62,9 +62,9 @@
 
 								<li ><a href="films">Film</a>
 									<ul class="sub-menu">
-                                        @foreach($categories as $categorie)
+                                        {{-- @foreach($categories as $categorie)
                                             <li><a href="films/{{$categorie->id_categorie}}">{{$categorie->nom_categorie}}</a></li>
-                                        @endforeach
+                                        @endforeach --}}
 									</ul>
 								</li>
 								<li ><a href="serie.html">Série</a>
@@ -81,6 +81,8 @@
 									<ul class="sub-menu">
 										<li><a href="dessinanime.html">Dessin Animé</a></li>
 									</ul>
+								</li>
+                                <li ><a href="playlists">Playlists</a>
 								</li>
 								<li> <a href="Connexion.html">Admin</a>
 									<ul class="sub-menu">

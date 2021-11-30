@@ -61,7 +61,7 @@ Route::post('/register',
 
 // Deconnexion
 Route::post('users/deconnexion',
-'App\Http\controllers\listeMediasController@destroy');
+'App\Http\controllers\listeMediasController@destroy')->name('deconnexion');
 
 // Route::middleware('auth')->group(function () {
 //     Route::get('/playlist', function ()    {

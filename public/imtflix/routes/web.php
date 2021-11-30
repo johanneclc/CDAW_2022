@@ -62,6 +62,10 @@ Route::post('/register',
 Route::post('users/deconnexion',
 'App\Http\controllers\listeMediasController@destroy')->name('deconnexion');
 
+// detailfilm
+Route::get('/detailfilm','App\Http\controllers\MediasController@detailfilm')->name('detailfilm');
+
+Route::post('/movies/{medias:id}/cast_store', [MediasController::class, 'movie_cast_store'])->name('movie_cast_store');
 // Route::middleware('auth')->group(function () {
 //     Route::get('/playlist', function ()    {
 //         // Réservé aux utilisateurs authentifiés

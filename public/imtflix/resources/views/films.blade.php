@@ -8,7 +8,7 @@
 @section('logo carousel')
     @foreach ($films as $film)
         <div class="single-logo-item">
-            <img src="{{ $film->image }}" alt="">
+            <a href="/detailfilm"><img src="{{ $film->image }}" alt=""> </a>
             <span>{{ $film->titre }}</span>
         </div>
     @endforeach

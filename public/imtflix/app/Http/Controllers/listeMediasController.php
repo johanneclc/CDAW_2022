@@ -47,29 +47,46 @@ class listeMediasController extends Controller
     }
 
     function postRegister(Request $request){
+        // $request->validate([
+        //     'name' => 'required',
+        //     'email' => 'required',
+        //     'password' => 'required',
+        //     'chemin_avatar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        // ]);
+  
+        // $input = $request->only('name','email',Hash::make($data['password']),'chemin_avatar');
+  
+        // if ($chemin_avatar = $request->file('chemin_avatar')) {
+        //                 $destinationPath = 'chemin_avatar/';
+        //                 $profileImage = date('YmdHis') . "." . $chemin_avatar->getClientOriginalExtension();
+        //                 $chemin_avatar->move($destinationPath, $profileImage);
+        //                 $input['chemin_avatar'] = "$profileImage";
+        // }
+        // User::create($input);
+        // return view('login');
 
         $data = $request->all();
-        $credentials = $request->only('name','email','password');
 
         try {
+            
+            if ($chemin_avatar = $request->file('chemin_avatar')) {
+                $destinationPath = 'chemin_avatar/';
+                $profileImage = date('YmdHis') . "." . $chemin_avatar->getClientOriginalExtension();
+                $chemin_avatar->move($destinationPath, $profileImage);
+                $data['chemin_avatar'] = "$profileImage";
+            }
+            
             User::create([
                 'name' => $data['name'],
                 'email' => $data['email'],
                 'password' => Hash::make($data['password']),
                 'chemin_avatar' => $data['chemin_avatar'],
             ]);
-            if ($chemin_avatar = $request->file('chemin_avatar')) {
-                $destinationPath = 'chemin_avatar/';
-                $profileImage = date('YmdHis') . "." . $chemin_avatar->getClientOriginalExtension();
-                $chemin_avatar->move($destinationPath, $profileImage);
-                $input['chemin_avatar'] = "$profileImage";
-            }
 
             return view('login');
        }
        catch(Error $error) {
             return redirect('register');
-           //return view('error');
 
          }
     }

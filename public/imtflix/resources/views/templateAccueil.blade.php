@@ -62,10 +62,9 @@
 
 								<li ><a href="films">Film</a>
 									<ul class="sub-menu">
-                                        {{-- @foreach($categories as $categories)
-                                            <li><a href="films/{{$categorie->id_categorie}}">$categorie->name</a></li>
-                                        @endforeach --}}
-										<li><a href="films">Film</a></li>
+                                        @foreach($categories as $categorie)
+                                            <li><a href="films/{{$categorie->id_categorie}}">{{$categorie->nom_categorie}}</a></li>
+                                        @endforeach
 									</ul>
 								</li>
 								<li ><a href="serie.html">Série</a>

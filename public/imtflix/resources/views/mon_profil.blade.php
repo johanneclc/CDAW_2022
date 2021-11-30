@@ -2,10 +2,10 @@
 
 @section('content')
 <section class="py-5">
-<form action="{{ route('users.update', Auth::user()->id) }}" method="POST" enctype="multipart/form-data"> 
+<form action="{{ route('users.update', Auth::user()->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
-     
+
 			  <div class="container my-5">
 				  <div class="row justify-content-center">
 					  <div class="col-lg-6">
@@ -20,12 +20,12 @@
                                 </ul>
                             </div>
                           @endif
-	
+
 							<div class="hero-text text-white">
 								<div class="hero-text-tablecell">
 									<div class="single-testimonial-slider">
 										<div class="client-avater">
-                                        <img src="/chemin_avatar/{{ Auth::user()->chemin_avatar }}" width="500px">
+                                        <img src="{{asset('chemin_avatar/'.Auth::user()->chemin_avatar)}}" width="500px">
 										</div>
 										<div class="client-meta">
 											<h3 class="text-white">Pseudo <span class="text-white">{{ Auth::user()->name }}</span></h3>
@@ -37,7 +37,7 @@
 											<div class="last-icon">
 												<i class="fas fa-quote-right"></i>
 											</div>
-                                            
+
                                             <div class="col-xs-12 col-sm-12 col-md-12">
                                                 <div class="form-group">
                                                     <strong>Image:</strong>
@@ -48,27 +48,27 @@
 											<div class="hero-btns">
 												<a href="listeMedias" class="boxed-btn">Retour</a>
                                                 <button type="submit" class="boxed-btn">Modifier Profile</button>
-                                            
+
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-	
-	
+
+
 					  </div>
 				  </div>
 			  </div>
 
 
-       
-     
+
+
     </form>
 
 		  </section>
 
-<!-- <div class="row"> 
+<!-- <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
                 <h2> Mon Profil</h2>
@@ -76,7 +76,7 @@
 
         </div>
     </div>
-     
+
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">

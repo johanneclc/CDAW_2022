@@ -9,7 +9,8 @@
     @foreach ($films as $film)
         <div class="single-logo-item">
             <img src="{{ $film->image }}" alt="">
-            <span>{{ $film->titre }}</span>
+            <h3>{{ $film->titre }}</a></h3>
+            <a href="{{ $film->id }}" class="cart-btn">Détails</a>
         </div>
     @endforeach
 @endsection

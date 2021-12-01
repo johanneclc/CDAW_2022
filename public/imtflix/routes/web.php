@@ -26,6 +26,10 @@ Route::get('/series',
 Route::get('/animes',
             'App\Http\controllers\MediasController@afficherAnimes')->name('animes');
 
+// detailfilm
+Route::get('/films/{film}','App\Http\controllers\MediasController@detailfilm')->name('film');
+
+
 // Playlists
 Route::get('/playlists',
             'App\Http\controllers\PlaylistController@afficherPlaylists')->name('playlists');
@@ -68,9 +72,6 @@ Route::post('/register',
 // Deconnexion
 Route::post('/users/deconnexion',
 'App\Http\controllers\listeMediasController@destroy')->name('deconnexion');
-
-// detailfilm
-Route::get('/detailfilm','App\Http\controllers\MediasController@detailfilm')->name('detailfilm');
 
 Route::post('/movies/{medias:id}/cast_store', [MediasController::class, 'movie_cast_store'])->name('movie_cast_store');
 

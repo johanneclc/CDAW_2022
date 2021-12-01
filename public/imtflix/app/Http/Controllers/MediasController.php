@@ -146,7 +146,10 @@ class MediasController extends Controller
         $animes = Media::where('id_type',"3")->orderBy('annee','desc')->get();
         return view("animes", compact('animes'));
     }
-    public function detailfilm(){
-        return view('detailfilm');
+    public function detailfilm(Media $film){
+        $medias = $film->load('medias');
+
+        return $medias;
     }
+
 }

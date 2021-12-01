@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Playlist;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
@@ -114,4 +115,6 @@ class UserController extends Controller
 
         return view('mon_profil',compact('image'));
     }
+
+
 }

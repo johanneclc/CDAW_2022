@@ -30,6 +30,9 @@ Route::get('/animes',
 Route::get('/playlists',
             'App\Http\controllers\PlaylistController@afficherPlaylists')->name('playlists');
 
+Route::get('/playlists/{playlist}',
+            'App\Http\controllers\PlaylistController@afficherPlaylist')->name('playlist');
+
 // Profil Utilisateur
 Route::get('/mon_profil', 'App\Http\controllers\userController@afficherMonProfil');
 Route::put('/modifier_profil','App\Http\controllers\userController@update')->name('modifier_profil');

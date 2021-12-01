@@ -46,4 +46,8 @@ class User extends Authenticatable
     public function role(){
         return $this->hasOne(RolePersonne::class,'id_role_personne','id_role_personne');
     }
+
+    function abonnements(){
+        return $this->hasManyThrough(Playlist::class, Abonnement::class,'id_utilisateur','id_playlist');
+    }
 }

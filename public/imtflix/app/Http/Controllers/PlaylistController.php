@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Playlist;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
@@ -85,9 +86,18 @@ class PlaylistController extends Controller
     }
 
     public function afficherPlaylists(){
-        $abonnements = Playlist::with('medias')->get();
+        $creations = Playlist::creations();
+        $abonnements = Auth::user()->load('abonnements')['abonnements'];
+        $playlists_communaute = Playlist::communaute();
 
-        return view('playlists',compact('abonnements'));
+        return view('playlists',compact('creations','abonnements','playlists_communaute'));
+    }
+
+    public function afficherPlaylist(Playlist $playlist){
+        $medias = $playlist->load('medias');
+
+        return $medias;
+
     }
 
 

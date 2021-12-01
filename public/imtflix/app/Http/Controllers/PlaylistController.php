@@ -94,9 +94,11 @@ class PlaylistController extends Controller
     }
 
     public function afficherPlaylist(Playlist $playlist){
-        $medias = $playlist->load('medias');
+        $medias = $playlist->load('medias')->medias;
 
-        return $medias;
+        // return $medias;
+
+        return view('playlist',compact('medias','playlist'));
 
     }
 

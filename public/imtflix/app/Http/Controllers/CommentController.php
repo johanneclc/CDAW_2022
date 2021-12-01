@@ -20,7 +20,7 @@ class CommentController extends Controller
 
         Comment::create([
             'user_id' => Auth::user()->id,
-            'movie_id' => $movie->id,
+            'id_media' => $movie->id,
             'content' => $request->comment
             
         ]);

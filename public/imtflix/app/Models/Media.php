@@ -11,9 +11,10 @@ class Media extends Model
 
     protected $table = 'medias';
     protected $primaryKey = 'id_media';
+    protected $fillable = ['rating_star'];
 
     protected $guarded = [
-        'created_at','update_at'
+        'created_at','update_at','rating_star'
     ];
     public function categories()
     {
@@ -27,5 +28,8 @@ class Media extends Model
     public function acteurs()
     {
         return $this->hasManyThrough(Personne::class, PersonneMedia::class,'id_media','id_personne');
+    }
+    public function comments() {
+        return $this->hasMany(Comment::class);
     }
 }

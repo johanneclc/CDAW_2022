@@ -147,9 +147,9 @@ class MediasController extends Controller
         return view("animes", compact('animes'));
     }
     public function detailfilm(Media $film){
-        $medias = $film->load('medias');
 
-        return $medias;
+        return view('detailfilm',compact('film'));
+
     }
 
 }

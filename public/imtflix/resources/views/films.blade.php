@@ -10,7 +10,7 @@
         <div class="single-logo-item">
             <img src="{{ $film->image }}" alt="">
             <h3>{{ $film->titre }}</a></h3>
-            <a href="{{ $film->id }}" class="cart-btn">Détails</a>
+            <a href="films/{{ $film->id_media }}" class="cart-btn">Détails</a>
         </div>
     @endforeach
 @endsection

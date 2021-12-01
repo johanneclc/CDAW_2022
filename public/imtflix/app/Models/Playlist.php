@@ -16,7 +16,7 @@ class Playlist extends Model
 
     public function medias()
     {
-        return $this->hasManyThrough(Media::class, PlaylistMedia::class,'id_playlist','id_media');
+        return $this->hasManyThrough(Media::class, PlaylistMedia::class,'id_playlist','id_media','id_playlist','id_media');
     }
 
     public function abonnements()

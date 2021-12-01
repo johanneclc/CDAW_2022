@@ -20,7 +20,7 @@
                     <a href="single-product.html"><img src="{{asset('assets/img/products/affiche1.jpg')}}" height="50%" alt=""></a>
                 </div> --}}
                 <h3>{{ $abonnement->nom_playlist }}</h3>
-                <a href="playlist/{{ $abonnement->id_playlist }}" class="cart-btn">Détails</a>
+                <a href="{{ $abonnement->id_playlist }}" class="cart-btn">Détails</a>
             </div>
         </div>
     @endforeach

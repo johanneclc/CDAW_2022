@@ -26,16 +26,20 @@ Route::get('/series',
 Route::get('/animes',
             'App\Http\controllers\MediasController@afficherAnimes')->name('animes');
 
+// Playlists
+Route::get('/playlists',
+            'App\Http\controllers\PlaylistController@afficherPlaylists')->name('playlists');
+
 // Profil Utilisateur
 Route::get('/mon_profil', 'App\Http\controllers\userController@afficherMonProfil');
 Route::put('/modifier_profil','App\Http\controllers\userController@update')->name('modifier_profil');
-Route::resource('users', userController::class);
+Route::resource('/users', userController::class);
 
 // Admin gestion utilisateurs
-Route::resource('gestion_utilisateurs', UserController::class);
+Route::resource('/gestion_utilisateurs', UserController::class);
 
 // Adin gestion medias
-Route::resource('gestion_medias', MediasController::class)->middleware('auth');
+Route::resource('/gestion_medias', MediasController::class)->middleware('auth');
 
 // Route::get('category/{name}/movies', [MoviesController::class, 'index'])->name('movies.category');
 
@@ -59,7 +63,7 @@ Route::post('/register',
             'App\Http\controllers\listeMediasController@postRegister')->name('register');
 
 // Deconnexion
-Route::post('users/deconnexion',
+Route::post('/users/deconnexion',
 'App\Http\controllers\listeMediasController@destroy')->name('deconnexion');
 
 // detailfilm

@@ -5,8 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\Media;
 use App\Models\Categorie;
 use App\Models\CategorieMedia;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Type;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 
 class MediasController extends Controller
 {
@@ -129,7 +132,9 @@ class MediasController extends Controller
 
     public function afficherFilms(){
         $films = Media::where('id_type',"1")->orderBy('annee','desc')->get();
-        return view("films", compact('films'));
+        $categories = DB::table('categories')->orderBy('nom_categorie','asc')->get();
+        $user = ( Auth::check() ? Auth::user() : null);
+        return view("films", compact('films','categories','user'));
     }
 
     public function afficherSeries(){

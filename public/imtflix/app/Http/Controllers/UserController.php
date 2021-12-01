@@ -90,15 +90,15 @@ class UserController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-   
+
     public function update(Request $request, User $user){
         $request->validate([
             'name' => 'required',
             'email' => 'required'
         ]);
-  
+
         $input = $request->all();
-  
+
         if ($chemin_avatar = $request->file('chemin_avatar')) {
             $destinationPath = 'chemin_avatar/';
             $profileImage = date('YmdHis') . "." . $chemin_avatar->getClientOriginalExtension();
@@ -107,9 +107,11 @@ class UserController extends Controller
         }else{
             unset($input['chemin_avatar']);
         }
-          
+
         $user->update($input);
-    
-        return view('mon_profil');
+
+        $image = Auth::user()->chemin_avatar;
+
+        return view('mon_profil',compact('image'));
     }
 }

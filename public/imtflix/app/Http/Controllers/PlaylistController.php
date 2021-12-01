@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Playlist;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class PlaylistController extends Controller
@@ -82,4 +83,12 @@ class PlaylistController extends Controller
     {
         //
     }
+
+    public function afficherPlaylists(){
+        $abonnements = Playlist::with('medias')->get();
+
+        return view('playlists',compact('abonnements'));
+    }
+
+
 }

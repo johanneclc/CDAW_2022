@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-
+use App\Models\Categorie;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
@@ -19,13 +19,9 @@ class listeMediasController extends Controller
         return view("listeMedias", ['params'=>$params]);
     }
 
-
-
-    function afficherFormulaire(){
-        return view('formulaireFilm');
-    }
     function afficherAccueil(){
-        return view('listeMedias');
+        $categories = Categorie::all();
+        return view('listeMedias',compact('categories'));
     }
     /* connextion */
 

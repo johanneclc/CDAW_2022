@@ -15,7 +15,7 @@ class CreateMediasTable extends Migration
     {
         Schema::disableForeignKeyConstraints();
         Schema::create('medias', function (Blueprint $table) {
-            $table->id('id_media');
+            $table->id();
             $table->string('titre');
             $table->string('description');
             $table->string('image');

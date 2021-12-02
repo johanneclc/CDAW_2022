@@ -4,11 +4,9 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Modifier Film</h2>
+                <h2 class="text-white">Modifier l'utilisateur {{$user->name}}</h2>
             </div>
-            <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('gestion_utilisateurs.index') }}"> retour</a>
-            </div>
+
         </div>
     </div>
 
@@ -23,37 +21,27 @@
         </div>
     @endif
 
-    <form action="{{ route('gestion_utilisateurs.update',$movie->id) }}" method="POST">
+    <form action="{{ route('changer_role',$user->id) }}" method="POST">
         @csrf
         @method('PUT')
 
         <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Nom:</strong>
-                <input type="text" name="name" class="form-control" placeholder="nom film">
+                <strong class="text-white">Rôle :</strong>
+                <select name="role" id="role" class="form-select form-control" aria-label="Default select example">
+                    @foreach($roles as $role)
+                        <option  value="{{ $role->id_role_utilisateur }}">
+                            {{ $role->nom_role_utilisateur }}
+                        </option>
+                    @endforeach
+                  </select>
             </div>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Detail:</strong>
-                <textarea class="form-control" style="height:150px" name="detail" placeholder="Detail"></textarea>
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Annee:</strong>
-                <textarea class="form-control" style="height:150px" name="annee" placeholder="DD-MM-YYYY"></textarea>
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Genre Film:</strong>
-                <textarea class="form-control" style="height:150px" name="categorie" placeholder="genre"></textarea>
-            </div>
-        </div>
+
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                <button type="submit" class="btn btn-primary">Envoyer</button>
+            <a class="btn btn-primary" href="{{ route('users.index') }}"> Retour</a>
+            <button type="submit" class="btn btn-primary">Confirmer</button>
         </div>
     </div>
 

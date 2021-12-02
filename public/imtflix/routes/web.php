@@ -38,15 +38,15 @@ Route::get('/playlists/{playlist}',
             'App\Http\controllers\PlaylistController@afficherPlaylist')->name('playlist');
 
 // Profil Utilisateur
-Route::get('/mon_profil', 'App\Http\controllers\userController@afficherMonProfil');
+Route::get('/mon_profil', 'App\Http\controllers\userController@afficherMonProfil')->name('mon_profil');
 Route::put('/modifier_profil','App\Http\controllers\userController@update')->name('modifier_profil');
-Route::resource('/users', userController::class);
 
 // Admin gestion utilisateurs
-Route::resource('/gestion_utilisateurs', UserController::class);
+Route::resource('/users', UserController::class);
+Route::put('/changer_role/{user}','App\Http\controllers\UserController@changer_role')->name('changer_role');
 
 // Adin gestion medias
-Route::resource('/gestion_medias', MediasController::class)->middleware('auth');
+Route::resource('/medias', MediasController::class)->middleware('auth');
 
 // Route::get('category/{name}/movies', [MoviesController::class, 'index'])->name('movies.category');
 

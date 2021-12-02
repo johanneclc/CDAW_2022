@@ -60,13 +60,11 @@
 						<nav class="main-menu">
 							<ul>
 
-								<li ><a href="films">Film</a>
-									<ul class="sub-menu">
-                                        {{-- @foreach($categories as $categorie)
-                                            <li><a href="films/{{$categorie->id_categorie}}">{{$categorie->nom_categorie}}</a></li>
-                                        @endforeach --}}
-									</ul>
-								</li>
+								<li ><a href="{{route('films')}}">Film</a>
+									{{-- <ul class="sub-menu">
+										<li><a href="films">Film</a></li>
+									</ul> --}}
+								{{-- </li>
 								<li ><a href="serie.html">Série</a>
 									<ul class="sub-menu">
 										<li><a href="series">Serie</a></li>
@@ -76,26 +74,27 @@
 									<ul class="sub-menu">
 										<li><a href="animes">Animés</a></li>
 									</ul>
-								</li>
-								<li><a href="dessinanime.html">Dessin Animé</a>
+								</li> --}}
+								{{-- <li><a href="dessinanime.html">Dessin Animé</a>
 									<ul class="sub-menu">
 										<li><a href="dessinanime.html">Dessin Animé</a></li>
 									</ul>
+								</li> --}}
+                                <li ><a href="{{route('playlists')}}">Playlists</a>
 								</li>
-                                <li ><a href="playlists">Playlists</a>
-								</li>
-								<li> <a href="Connexion.html">Admin</a>
+                                @if(Auth::user()->id_role_utilisateur==1)
+								<li> <a >Admin</a>
 									<ul class="sub-menu">
-										<li><a href="gestion_medias">Gestion Médias</a></li>
-                                        <li><a href="gestion_utilisateurs">Gestion Utilisateurs</a></li>
-									</ul>
+										<li><a href="{{route('users')}}">Gestion Utilisateurs</a></li>
+                                        <li><a href="{{route('gestion_medias')}}">Gestion des Médias</a></li>									</ul>
 								</li>
+                                @endif
 								<li> <a href="login">Se Connecter</a>
 									<ul class="sub-menu">
-										<li><a href="login">Connexion</a></li>
-										<li><a href="register">Inscription</a></li>
-										<li><a href="mon_profil">Mon Profil</a></li>
-                                        <li><a href="deconnexion">Deconnexion</a></li>
+										<li><a href="{{route('login')}}">Connexion</a></li>
+										<li><a href="{{route('register')}}">Inscription</a></li>
+										<li><a href="{{route('mon_profil')}}">Mon Profil</a></li>
+                                        <li><a href="{{route('deconnexion')}}">Deconnexion</a></li>
 									</ul>
 								</li>
 

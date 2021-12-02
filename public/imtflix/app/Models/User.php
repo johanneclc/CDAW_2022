@@ -44,10 +44,11 @@ class User extends Authenticatable
     ];
 
     public function role(){
-        return $this->hasOne(RolePersonne::class,'id_role_personne','id_role_personne');
+        return $this->hasOne(RoleUtilisateur::class,'id_role_utilisateur','id_role_utilisateur');
     }
 
     function abonnements(){
         return $this->hasManyThrough(Playlist::class, Abonnement::class,'id_utilisateur','id_playlist');
     }
+
 }

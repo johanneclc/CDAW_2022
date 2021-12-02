@@ -82,7 +82,7 @@
 								</li>
 								<li> <a href="Connexion.html">Admin</a>
 									<ul class="sub-menu">
-										<li><a href="gestion_utilisateurs.html">Gestion Utilisateurs</a></li>
+										<li><a href="users.html">Gestion Utilisateurs</a></li>
 									</ul>
 								</li>
 								<li> <a href="Connexion.html">Se Connecter</a>

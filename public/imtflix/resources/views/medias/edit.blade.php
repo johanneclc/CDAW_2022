@@ -23,7 +23,7 @@
         </div>
     @endif
 
-    <form action="{{ route('gestion_medias.update',$movie->id) }}" method="POST">
+    <form action="{{ route('gestion_medias.update',$media->id) }}" method="POST">
         @csrf
         @method('PUT')
 

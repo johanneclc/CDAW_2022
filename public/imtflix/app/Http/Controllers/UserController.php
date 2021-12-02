@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Playlist;
+use App\Models\RoleUtilisateur;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
@@ -14,10 +15,29 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    // Gestion des utilisateurs par l'administrateur
+    // Affichages des utilisateurs du site
     public function index()
     {
-        $users = User::all();
-        // with('role');
+        $users = User::with('role')->get();
+
+        return view('users.index',compact('users'));
+    }
+    // Affichage de la page de modification de role d'un utilisateur
+    public function edit(User $user)
+    {
+        $roles = RoleUtilisateur::all();
+        return view('users.edit',compact('user','roles'));
+    }
+    // fonction de modification du role uutilisateur
+    public function changer_role(Request $request, User $user){
+        $request->validate([
+            'role' => 'required'
+        ]);
+
+        User::where('id',$user->id)->update(['id_role_utilisateur'=>($request->input('role'))]);
+
+        $users = User::with('role')->get();
 
         return view('users.index',compact('users'));
     }
@@ -52,20 +72,8 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        //
+        return view('users.show',compact('user'));
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\User  $user
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(User $user)
-    {
-        //
-    }
-
 
     /**
      * Remove the specified resource from storage.
@@ -75,7 +83,7 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        //
+        //        return view('users.destroy',compact('user'));
     }
 
     public function afficherMonProfil(User $user){
@@ -115,6 +123,8 @@ class UserController extends Controller
 
         return view('mon_profil',compact('image'));
     }
+
+
 
 
 }

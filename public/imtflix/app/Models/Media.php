@@ -30,6 +30,6 @@ class Media extends Model
         return $this->hasManyThrough(Personne::class, PersonneMedia::class,'id_media','id_personne');
     }
     public function comments() {
-        return $this->hasMany(Comment::class);
+        return $this->hasMany(Comment::class,'id_media');
     }
 }

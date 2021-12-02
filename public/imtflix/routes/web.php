@@ -27,7 +27,7 @@ Route::get('/animes',
             'App\Http\controllers\MediasController@afficherAnimes')->name('animes');
 
 // detailfilm
-Route::get('/films/{film}','App\Http\controllers\MediasController@detailfilm')->name('film');
+Route::get('/films/{media}','App\Http\controllers\MediasController@detailfilm')->name('film');
 
 
 // Playlists

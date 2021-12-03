@@ -81,6 +81,11 @@ Route::resource('casts', CastController::class);
 Route::resource('movies.comments', CommentController::class)->shallow();
 Route::post('/movies/{media}/comments',
             'App\Http\controllers\CommentController@store')->name('commentaire');
+
+//like
+
+Route::get('/addLike','App\Http\Controllers\CommentController@addLike');
+
 // Route::middleware('auth')->group(function () {
 //     Route::get('/playlist', function ()    {
 //         // Réservé aux utilisateurs authentifiés

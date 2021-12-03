@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Comment;
 use App\Models\Media;
+use App\Models\Jaime;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -34,5 +35,19 @@ class CommentController extends Controller
         }
         $comment->delete();
         return back();
+    }
+
+    public function addLike(Request $req){    
+        $idf = $req->input('id');
+        $c=0;
+        $data=[
+            'id_media'=>$idf,
+            'user_id'=>Auth::user()->id
+            
+        ];
+       
+      
+        Jaime::create($data);
+         return redirect("films/".$idf);
     }
 }

@@ -50,7 +50,7 @@
 					<div class="main-menu-wrap">
 						<!-- logo -->
 						<div class="site-logo">
-							<a href="index.php">
+							<a href="{{route('accueil')}}">
 								<img src="{{asset('assets/img/logo.png')}}" alt="">
 							</a>
 						</div>
@@ -80,8 +80,10 @@
 										<li><a href="dessinanime.html">Dessin Animé</a></li>
 									</ul>
 								</li> --}}
+								@if($userRole["role"]==1 || $userRole["role"]==2 || $userRole["role"]==3)
                                 <li ><a href="{{route('playlists')}}">Playlists</a>
 								</li>
+								@endif
                                 @if($userRole["role"]==1)
 								<li> <a >Admin</a>
 									<ul class="sub-menu">

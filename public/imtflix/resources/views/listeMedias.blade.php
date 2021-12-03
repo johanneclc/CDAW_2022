@@ -2,8 +2,8 @@
 
 @section('content')
     <h1>Bienvenue</h1><br>
-    @if($userRole["role"]==1)
-        <h1>Votre compte a été bloqué par un administrateur du site !</h1><br>
+    @if($userRole["role"]==4)
+        <h3 class="text-white">Votre compte a été bloqué par un administrateur du site !</h3>
     @endif
 @endsection
 

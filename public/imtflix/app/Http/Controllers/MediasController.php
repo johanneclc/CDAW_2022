@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Media;
 use App\Models\Categorie;
+use App\Models\User;
 use App\Models\CategorieMedia;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Type;

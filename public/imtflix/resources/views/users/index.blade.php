@@ -51,11 +51,11 @@
                     </a>
 
                     @csrf
-                    @method('DELETE')
+                    <!-- @method('DELETE')
                     <button type="submit" class="btn btn-danger" action="{{ route('users.destroy',$user->id) }}" method="POST">
                         <i class="fas fa-trash"></i>
                         Bannir
-                    </button>
+                    </button> -->
                 </form>
             </td>
         </tr>

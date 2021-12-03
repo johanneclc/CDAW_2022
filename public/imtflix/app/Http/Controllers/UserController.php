@@ -87,11 +87,11 @@ class UserController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function destroy(User $user)
-    {
-        $userRole = User::user_role(); 
-        //        return view('users.destroy',compact('user','userRole'));
-    }
+    // public function destroy(User $user)
+    // {
+    //     $userRole = User::user_role(); 
+    //     return changer_role(["role"=>4],$user);
+    // }
 
     public function afficherMonProfil(User $user){
         $user = Auth::user();
@@ -136,8 +136,4 @@ class UserController extends Controller
     public function deconnection(){
         Auth::logout(); 
     }
-
-
-
-
 }

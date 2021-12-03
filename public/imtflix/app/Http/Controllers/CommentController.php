@@ -12,15 +12,15 @@ class CommentController extends Controller
     public function __construct()
     {
         $this->middleware('auth')->only(['store', 'destroy']);
-    }
+    } 
 
-    public function store(Request $request, Media $movie)
+    public function store(Request $request, $movie)
     {
         $request->validate(['comment' => 'required']);
 
         Comment::create([
             'user_id' => Auth::user()->id,
-            'id_media' => $movie->id,
+            'id_media' => $movie,
             'content' => $request->comment
             
         ]);

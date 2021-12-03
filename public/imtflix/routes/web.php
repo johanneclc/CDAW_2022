@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MediasController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CommentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -78,7 +79,8 @@ Route::post('/movies/{medias:id}/cast_store', [MediasController::class, 'movie_c
 
 Route::resource('casts', CastController::class);
 Route::resource('movies.comments', CommentController::class)->shallow();
-
+Route::post('/movies/{media}/comments',
+            'App\Http\controllers\CommentController@store')->name('commentaire');
 // Route::middleware('auth')->group(function () {
 //     Route::get('/playlist', function ()    {
 //         // Réservé aux utilisateurs authentifiés

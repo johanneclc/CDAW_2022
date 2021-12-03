@@ -44,6 +44,7 @@
                 <i class="fas fa-quote-right"></i>
             </div>
         </div>
+        <a href="playlists/{{ $abonnement->id_playlist }}" class="cart-btn">Détails</a>
     </div>
     @endforeach
     <div class="single-testimonial-slider">
@@ -63,22 +64,19 @@
 
 @section('latest news title')
     <h3><span class="orange-text">La</span> Communauté</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, fuga quas itaque eveniet beatae optio.</p>
+    <p>Découvre les playlists des autres utilisateurs de ImtFlix ! </p>
 @endsection
 
 @section('latest news content')
     @foreach($playlists_communaute as $playlist)
     <div class="col-lg-4 col-md-6">
         <div class="single-latest-news">
-                <a href="#"><div><img class="latest-news-bg news-bg-1" src="{{asset('assets/img/avaters/friendds.jpg')}}" alt="""></img></div></a>
                 <div class="news-text-box">
                     <h3><a href="#">{{ $playlist->nom_playlist }}</a></h3>
                     <p class="blog-meta">
                         <span class="author"><i class="fas fa-user"></i>{{ $playlist->nom_utilisateur }}</span>
-                        <span class="date"><i class="fas fa-calendar"></i> 27 December, 1994</span>
+                        <span class="date"><i class="fas fa-calendar"></i> {{ $playlist->updates_at }}</span>
                     </p>
-                    <p class="excerpt">Vivamus lacus enim, pulvinar vel nulla sed, scelerisque rhoncus nisi. Praesent vitae mattis nunc, egestas viverra eros.</p>
-                    <a href="#" class="read-more-btn">Voir les épisodes <i class="fas fa-angle-right"></i></a>
                 </div>
             </div>
         </div>

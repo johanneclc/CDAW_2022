@@ -5,6 +5,12 @@
     @if($userRole["role"]==4)
         <h3 class="text-white">Votre compte a été bloqué par un administrateur du site !</h3>
     @endif
+    <h5 class="text-white">
+        <span class="orange-text h3">Découvrez </span>
+        une multitude de médias. 
+        <span class="orange-text h3">Exprimez</span> votre avis.
+        <span class="orange-text h3"> Partagez </span>vos playlists.
+    </h5>
 @endsection
 
 @section('logo carousel')

@@ -12,12 +12,15 @@
             <ul class="list-group list-group-flush">
                 @if (count($media->comments))
                     @foreach ($media->comments as $comment)
-                        <li class="list-group-item"><b>{{ $comment->user->name }}: </b>{{ $comment->content }}
+                        <li class="list-group-item text-left"><b>{{ $comment->user->name }} : </b>{{ $comment->content }}
+                            <p class="text-grey text-right"><small>{{ $comment->updated_at }}</small> </p>
                             @auth
                                 <form action="{{ route('comments.destroy', $comment->id) }}" method="post">
                                     @csrf
                                     @method('delete')
-                                    <button type="submit" class="btn btn-link text-danger">Delete</button>
+                                    @if($comment->user->id == $userRole["user"]->id)
+                                        <button type="submit" class="btn btn-link text-danger text-right">Delete</button>
+                                    @endif
                                 </form>
                             @endauth
                         </li>

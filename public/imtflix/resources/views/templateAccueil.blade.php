@@ -257,11 +257,6 @@
 			<div class="row">
 				@yield("latest news content")
 			</div>
-			<div class="row">
-				<div class="col-lg-12 text-center">
-					<a href="films_series.html" class="boxed-btn">Voir Plus</a>
-				</div>
-			</div>
 		</div>
 	</div>
 	<!-- end latest news -->

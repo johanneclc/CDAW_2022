@@ -54,18 +54,18 @@ class User extends Authenticatable
 
     static function user_role(){
         if(!Auth::check()){
-            return ['role'=> 0, 'name'=>null] ;
+            return ['role'=> 0, 'name'=>null,'user'=>null] ;
         }
         elseif (Auth::user()->id_role_utilisateur==1) {
-            return ['role'=>1, 'name'=>Auth::user()->name] ;
+            return ['role'=>1, 'name'=>Auth::user()->name,'user'=>Auth::user()] ;
         }
         elseif (Auth::user()->id_role_utilisateur==2) {
-            return ['role'=>2, 'name'=>Auth::user()->name] ;
+            return ['role'=>2, 'name'=>Auth::user()->name,'user'=>Auth::user()] ;
         }
         elseif (Auth::user()->id_role_utilisateur==2) {
-            return ['role'=>3, 'name'=>Auth::user()->name] ;
+            return ['role'=>3, 'name'=>Auth::user()->name,'user'=>Auth::user()] ;
         }
-        return ['role'=>4, 'name'=>Auth::user()->name] ; 
+        return ['role'=>4, 'name'=>Auth::user()->name,'user'=>Auth::user()] ; 
     }
 
 }

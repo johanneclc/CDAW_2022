@@ -51,7 +51,7 @@
 						<!-- logo -->
 						<div class="site-logo">
 							<a href="{{route('accueil')}}">
-								<img src="{{asset('assets/img/logo.png')}}" alt="">
+								<img src="{{asset('assets/img/Logo.png')}}" alt="">
 							</a>
 						</div>
 						<!-- logo -->

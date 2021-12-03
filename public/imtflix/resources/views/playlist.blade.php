@@ -15,11 +15,9 @@
     @foreach($medias as $media)
         <div class="col-lg-4 col-md-6 text-center">
             <div class="single-product-item">
-                {{-- <div class="product-image">
-                    <a href="single-product.html"><img src="{{asset('assets/img/products/affiche1.jpg')}}" height="50%" alt=""></a>
-                </div> --}}
+                <img src="{{ $media->image }}" alt="">
                 <h3>{{ $media->titre }}</h3>
-                {{-- <a href="" class="cart-btn">Détails</a> --}}
+                <a href="{{route('film',$media->id_media) }}" class="cart-btn">Détails</a>
             </div>
         </div>
     @endforeach

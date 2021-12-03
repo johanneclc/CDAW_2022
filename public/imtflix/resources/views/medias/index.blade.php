@@ -7,7 +7,7 @@
             <div class="pull-left">
             </div>
             <div class="pull-right">
-                <a class="btn btn-success" href="{{ route('gestion_medias.create') }}"> Ajouter un film</a>
+                <a class="btn btn-success" href="{{ route('medias.create') }}"> Ajouter un film</a>
             </div>
         </div>
     </div>
@@ -43,14 +43,14 @@
 
             <td>{{ $media->type->nom_type }}</td>
             <td>
-                <form action="{{ route('gestion_medias.destroy',$media->id_media) }}" method="POST">
+                <form action="{{ route('medias.destroy',$media->id_media) }}" method="POST">
 
-                    <a class="btn btn-info" href="{{ route('gestion_medias.show',$media->id_media) }}">
+                    <a class="btn btn-info" href="{{ route('medias.show',$media->id_media) }}">
                         <i class="fas fa-eye"></i>
                         Show
                     </a>
 
-                    <a class="btn btn-primary" href="{{ route('gestion_medias.edit',$media->id_media) }}">
+                    <a class="btn btn-primary" href="{{ route('medias.edit',$media->id_media) }}">
                         <i class="fas fa-pen"></i>
                         Edit
                     </a>

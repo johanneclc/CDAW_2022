@@ -7,7 +7,7 @@
                 <h2>Modifier Film</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('gestion_medias.index') }}"> retour</a>
+                <a class="btn btn-primary" href="{{ route('medias.index') }}"> retour</a>
             </div>
         </div>
     </div>
@@ -23,7 +23,7 @@
         </div>
     @endif
 
-    <form action="{{ route('gestion_medias.update',$media->id) }}" method="POST">
+    <form action="{{ route('medias.update',$media->id) }}" method="POST">
         @csrf
         @method('PUT')
 

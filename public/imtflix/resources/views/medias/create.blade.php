@@ -20,7 +20,7 @@
     </div>
 @endif
 
-<form action="{{ route('gestion_medias.store') }}" method="POST">
+<form action="{{ route('medias.store') }}" method="POST">
     @csrf
 
      <div class="row">
@@ -77,7 +77,7 @@
 
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                 <button type="submit" class="btn btn-primary">Envoyer</button>
-                <a class="btn btn-primary" href="{{ route('gestion_medias.index') }}"> Retour</a>
+                <a class="btn btn-primary" href="{{ route('medias.index') }}"> Retour</a>
         </div>
 
     </div>

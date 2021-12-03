@@ -7,10 +7,10 @@
 	<meta name="description" content="Responsive Bootstrap4 Shop Template, Created by Imran Hossain from https://imransdesign.com/">
 
 	<!-- title -->
-	<title>Fruitkha</title>
+	<title>ImtFlix</title>
 
 	<!-- favicon -->
-	<link rel="shortcut icon" type="image/png" href="{{asset('assets/img/favicon.png')}}">
+	<link rel="shortcut icon" type="image/png" href="{{asset('assets/img/icone.png')}}">
 	<!-- google font -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
@@ -51,7 +51,7 @@
 						<!-- logo -->
 						<div class="site-logo">
 							<a href="{{route('accueil')}}">
-								<img src="{{asset('assets/img/logo.png')}}" alt="">
+								<img src="{{asset('assets/img/Logo.png')}}" alt="">
 							</a>
 						</div>
 						<!-- logo -->

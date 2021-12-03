@@ -47,4 +47,8 @@ class Media extends Model
             ->take(6)
             ->get();
     }
+
+    static function count_jaime(Media $media){
+        return DB::table('jaime')->where('id_media',$media->id_media)->count();
+    }
 }

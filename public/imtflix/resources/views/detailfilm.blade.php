@@ -4,6 +4,9 @@
     <div class="row">
         <div class="col-4">
             <img src="{{ $media->image }}" alt="">
+            <br>
+            <span class="date text-white">{{ $count_jaime }}  <i class="fas fa-heart"></i></span>
+
         </div>
         
         <div class="col-8">

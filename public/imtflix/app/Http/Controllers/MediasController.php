@@ -160,9 +160,9 @@ class MediasController extends Controller
     public function detailfilm(Media $media){
         $media->load('comments')->get();
         $userRole = User::user_role(); 
+        $count_jaime = Media::count_jaime($media);
 
-
-        return view('detailfilm',compact('media','userRole'));
+        return view('detailfilm',compact('media','userRole','count_jaime'));
 
     }
 

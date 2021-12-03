@@ -26,7 +26,7 @@
                         No comments!
                 @endif
             </ul>
-            <form action="{{ route('movies.comments.store', $media->id_media) }}" method="POST">
+            <form action="{{ url('/movies/'.$media->id_media.'/comments') }}" method="POST">
                 @csrf
                 <input type="text" name="comment" class="form-control" placeholder="say something...">
                 <button type="submit" class="btn btn-primary mt-2 float-right">Comment</button>

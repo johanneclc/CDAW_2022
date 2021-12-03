@@ -82,21 +82,27 @@
 								</li> --}}
                                 <li ><a href="{{route('playlists')}}">Playlists</a>
 								</li>
-                                @if(Auth::user()->id_role_utilisateur==1)
+								@if($userRole["role"]==1)
 								<li> <a >Admin</a>
 									<ul class="sub-menu">
-										<li><a href="{{route('users')}}">Gestion Utilisateurs</a></li>
-                                        <li><a href="{{route('gestion_medias')}}">Gestion des Médias</a></li>									</ul>
+										<li><a href="{{ route('users.index') }}">Gestion Utilisateurs</a></li>
+                                        <li><a href="{{ route('medias.index') }}">Gestion des Médias</a></li>									</ul>
 								</li>
                                 @endif
 								<li> <a href="login">Se Connecter</a>
 									<ul class="sub-menu">
-										<li><a href="{{route('login')}}">Connexion</a></li>
-										<li><a href="{{route('register')}}">Inscription</a></li>
-										<li><a href="{{route('mon_profil')}}">Mon Profil</a></li>
-                                        <li><a href="{{route('deconnexion')}}">Deconnexion</a></li>
+										@if($userRole["role"]==0)
+											<li><a href="{{route('login')}}">Connexion</a></li>
+											<li><a href="{{route('register')}}">Inscription</a></li>
+										@else
+											<li><a href="{{route('mon_profil')}}">Mon Profil</a></li>
+											<li><a href="{{route('deconnexion')}}">Deconnexion</a></li>
+										@endif
 									</ul>
 								</li>
+								@if($userRole["role"]!=0)
+									<span class="text-white">{{ $userRole["name"] }}</span>
+								@endif
 
 								<li>
 									<div class="header-icons">

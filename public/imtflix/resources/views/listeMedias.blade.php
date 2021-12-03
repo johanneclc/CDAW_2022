@@ -2,6 +2,9 @@
 
 @section('content')
     <h1>Bienvenue</h1><br>
+    @if($userRole["role"]==1)
+        <h1>Votre compte a été bloqué par un administrateur du site !</h1><br>
+    @endif
 @endsection
 
 @section('logo carousel')

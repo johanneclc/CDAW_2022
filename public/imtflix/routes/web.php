@@ -17,7 +17,7 @@ use App\Http\Controllers\UserController;
 
 // Accueil
 Route::get('/',
-            'App\Http\controllers\listeMediasController@afficherAccueil');
+            'App\Http\controllers\listeMediasController@afficherAccueil')->name('accueil');
 
 Route::get('/films',
             'App\Http\controllers\MediasController@afficherFilms')->name('films');

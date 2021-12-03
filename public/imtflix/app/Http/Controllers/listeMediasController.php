@@ -12,30 +12,36 @@ use Error;
 class listeMediasController extends Controller
 {
     function afficherListeMedias(){
-        return view("listeMedias");
+        $userRole = User::user_role(); 
+        return view("listeMedias",compact('userRole'));
     }
 
     public function afficherListeMediasParams($params){
-        return view("listeMedias", ['params'=>$params]);
+        $userRole = User::user_role(); 
+        return view("listeMedias",compact('userRole'),['params'=>$params]);
     }
 
     function afficherAccueil(){
+        $userRole = User::user_role(); 
         $categories = Categorie::all();
-        return view('listeMedias',compact('categories'));
+        return view('listeMedias',compact('categories','userRole'));
     }
     /* connextion */
 
     function afficherLogin(){
-        return view('login');
+        $userRole = User::user_role(); 
+        return view('login',compact('userRole'));
     }
     function postLogin(Request $request){
-        $credentials = $request->only('email','password');
+        $credentials = $request->only('email','password');     
 
         if(Auth::attempt($credentials)){
-            return view('listeMedias');
+            $userRole = User::user_role(); 
+            return $this->afficherAccueil();
         }
         else{
-            return redirect('login');
+            $userRole = User::user_role(); 
+            return redirect('login',compact('userRole'));
         }
         //return view('login');
     }
@@ -43,7 +49,8 @@ class listeMediasController extends Controller
     // register
 
     function afficherRegister(){
-        return view('register');
+        $userRole = User::user_role(); 
+        return view('register',compact('userRole'));
     }
 
     function postRegister(Request $request){
@@ -82,11 +89,13 @@ class listeMediasController extends Controller
                 'password' => Hash::make($data['password']),
                 'chemin_avatar' => $data['chemin_avatar'],
             ]);
+            $userRole = User::user_role(); 
 
-            return view('login');
+            return view('login',compact('userRole'));
        }
        catch(Error $error) {
-            return redirect('register');
+            $userRole = User::user_role(); 
+            return redirect('register',compact('userRole'));
 
          }
     }
@@ -94,6 +103,8 @@ class listeMediasController extends Controller
     public function destroy(User $user)
     {
         Auth::logout();
+        $userRole = User::user_role(); 
+        return redirect('accueil',compact('userRole'));
     }
 
 }

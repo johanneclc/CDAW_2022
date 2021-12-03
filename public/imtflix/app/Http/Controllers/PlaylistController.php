@@ -89,16 +89,18 @@ class PlaylistController extends Controller
         $creations = Playlist::creations();
         $abonnements = Auth::user()->load('abonnements')['abonnements'];
         $playlists_communaute = Playlist::communaute();
+        $userRole = User::user_role(); 
 
-        return view('playlists',compact('creations','abonnements','playlists_communaute'));
+        return view('playlists',compact('creations','abonnements','playlists_communaute','userRole'));
     }
 
     public function afficherPlaylist(Playlist $playlist){
         $medias = $playlist->load('medias')->medias;
+        $userRole = User::user_role(); 
 
         // return $medias;
 
-        return view('playlist',compact('medias','playlist'));
+        return view('playlist',compact('medias','playlist','userRole'));
 
     }
 

@@ -10,7 +10,8 @@ class CategoriesController extends Controller
 
     function afficherCategories(){
         $categories = Categorie::all();
-        return view("categories", ['categories'=>$categories]);
+        $userRole = User::user_role(); 
+        return view("categories", compact('categories','userRole'));
     }
 
 

@@ -15,9 +15,9 @@ class TypesController extends Controller
     public function index()
     {
         $types = Type::with('getTypesOfMedias')->latest()->paginate(5);
+        $userRole = User::user_role(); 
 
-
-        return view('medias.index',compact('medias'))
+        return view('medias.index',compact('medias','userRole'))
         ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 

@@ -20,14 +20,17 @@ class UserController extends Controller
     public function index()
     {
         $users = User::with('role')->get();
+        $userRole = User::user_role(); 
 
-        return view('users.index',compact('users'));
+        return view('users.index',compact('users','userRole'));
     }
     // Affichage de la page de modification de role d'un utilisateur
     public function edit(User $user)
     {
         $roles = RoleUtilisateur::all();
-        return view('users.edit',compact('user','roles'));
+        $userRole = User::user_role(); 
+
+        return view('users.edit',compact('user','roles','userRole'));
     }
     // fonction de modification du role uutilisateur
     public function changer_role(Request $request, User $user){
@@ -38,8 +41,9 @@ class UserController extends Controller
         User::where('id',$user->id)->update(['id_role_utilisateur'=>($request->input('role'))]);
 
         $users = User::with('role')->get();
+        $userRole = User::user_role(); 
 
-        return view('users.index',compact('users'));
+        return view('users.index',compact('users','userRole'));
     }
 
 
@@ -72,7 +76,9 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        return view('users.show',compact('user'));
+        $userRole = User::user_role(); 
+
+        return view('users.show',compact('user','userRole'));
     }
 
     /**
@@ -83,13 +89,15 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        //        return view('users.destroy',compact('user'));
+        $userRole = User::user_role(); 
+        //        return view('users.destroy',compact('user','userRole'));
     }
 
     public function afficherMonProfil(User $user){
         $user = Auth::user();
+        $userRole = User::user_role(); 
 
-        return view('mon_profil');
+        return view('mon_profil',compact('userRole'));
     }
 
         /**
@@ -120,8 +128,13 @@ class UserController extends Controller
         $user->update($input);
 
         $image = Auth::user()->chemin_avatar;
+        $userRole = User::user_role(); 
 
-        return view('mon_profil',compact('image'));
+        return view('mon_profil',compact('image','userRole'));
+    }
+
+    public function deconnection(){
+        Auth::logout(); 
     }
 
 

@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Support\Facades\Auth;
 
 class User extends Authenticatable
 {
@@ -49,6 +50,22 @@ class User extends Authenticatable
 
     function abonnements(){
         return $this->hasManyThrough(Playlist::class, Abonnement::class,'id_utilisateur','id_playlist');
+    }
+
+    static function user_role(){
+        if(!Auth::check()){
+            return ['role'=> 0, 'name'=>null] ;
+        }
+        elseif (Auth::user()->id_role_utilisateur==1) {
+            return ['role'=>1, 'name'=>Auth::user()->name] ;
+        }
+        elseif (Auth::user()->id_role_utilisateur==2) {
+            return ['role'=>2, 'name'=>Auth::user()->name] ;
+        }
+        elseif (Auth::user()->id_role_utilisateur==2) {
+            return ['role'=>3, 'name'=>Auth::user()->name] ;
+        }
+        return ['role'=>4, 'name'=>Auth::user()->name] ; 
     }
 
 }

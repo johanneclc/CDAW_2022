@@ -14,21 +14,6 @@
 @endsection
 
 @section('logo carousel')
-    <div class="single-logo-item">
-        <img src="{{asset('assets/img/avaters/serie1.jpg')}}" alt="">
-    </div>
-    <div class="single-logo-item">
-        <img src="{{asset('assets/img/avaters/serie2.jpg')}}" alt="">
-    </div>
-    <div class="single-logo-item">
-        <img src="{{asset('assets/img/avaters/serie3.jpg')}}" alt="">
-    </div>
-    <div class="single-logo-item">
-        <img src="{{asset('assets/img/products/affiche1.jpg')}}" alt="">
-    </div>
-    <div class="single-logo-item">
-        <img src="{{asset('assets/img/products/affiche3.jpg')}}" alt="">
-    </div>
 @endsection
 
 @section('product section titre')
@@ -39,36 +24,20 @@
 @endsection
 
 @section('product section content')
-    <div class="col-lg-4 col-md-6 text-center">
-        <div class="single-product-item">
-            <div class="product-image">
-                <a href="single-product.html"><img src="{{asset('assets/img/products/affiche1.jpg')}}" height="50%" alt=""></a>
+    @foreach($medias_populaires as $media)
+        <div class="col-lg-4 col-md-6 text-center">
+            <div class="single-product-item">
+                <div class="product-image">
+                    <a href="{{ route('film', $media->id_media) }}" >
+                        <img src="{{ $media->image }}" height="50%" alt="">
+                    </a>
+                </div>
+                <h3>{{ $media->titre }}</h3>
+                <p class="product-price"><span>{{ $media->annee }}</span> </p>
+                <span class="date">{{ $media->count }}  <i class="fas fa-heart"></i></span>
             </div>
-            <h3>Titanic</h3>
-            <p class="product-price"><span>2018</span> </p>
-            <a href="cart.html" class="cart-btn">Regarder</a>
         </div>
-    </div>
-    <div class="col-lg-4 col-md-6 text-center">
-        <div class="single-product-item">
-            <div class="product-image">
-                <a href="single-product.html"><img src="{{asset('assets/img/products/affiche2.jpg')}}" height="50%" alt=""></a>
-            </div>
-            <h3>Black X Widow</h3>
-            <p class="product-price"><span>2017</span> </p>
-            <a href="cart.html" class="cart-btn">Regarder</a>
-        </div>
-    </div>
-    <div class="col-lg-4 col-md-6 text-center">
-        <div class="single-product-item">
-            <div class="product-image">
-                <a href="single-product.html"><img src="{{asset('assets/img/products/affiche3.jpg')}}" height="50%" alt=""></a>
-            </div>
-            <h3>Venom</h3>
-            <p class="product-price"><span>2018</span> </p>
-            <a href="cart.html" class="cart-btn">Regarder</a>
-        </div>
-    </div>
+    @endforeach
 @endsection
 
 @section('testimonail-section title')
@@ -76,98 +45,45 @@
 @endsection
 
 @section('testimonail-section content')
-    <div class="single-testimonial-slider">
-        <div class="client-avater">
-            <img src="{{asset('assets/img/avaters/serie1.jpg')}}" alt="">
-        </div>
-        <div class="client-meta">
-            <p class="testimonial-body">
-                YOU | Serie Netflix <br>
-                " Sed ut perspiciatis unde omnis iste natus error veritatis et  quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium "
-            </p>
-            <div class="last-icon">
-                <i class="fas fa-quote-right"></i>
+    @foreach($medias_recents as $media)
+        <div class="single-testimonial-slider">
+            <div class="client-avater">
+                <img src="{{ $media->image }}" alt="">
             </div>
-        </div>
-    </div>
-    <div class="single-testimonial-slider">
-        <div class="client-avater">
-            <img src="{{asset('assets/img/avaters/serie2.jpg')}}" alt="">
-        </div>
-        <div class="client-meta">
-            <p class="testimonial-body">
-                UNBELIVEBALE | Serie Netflix <br>
-                " Sed ut perspiciatis unde omnis iste natus error veritatis et  quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium "
-            </p>
-            <div class="last-icon">
-                <i class="fas fa-quote-right"></i>
-            </div>
-        </div>
-    </div>
-    <div class="single-testimonial-slider">
-        <div class="client-avater">
-            <img src="{{asset('assets/img/avaters/serie3.jpg')}}" alt="">
-        </div>
-        <div class="client-meta">
-            <p class="testimonial-body">
-                Game Of Thrones | Serie Netflix <br>
-                " Sed ut perspiciatis unde omnis iste natus error veritatis et  quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium "
-            </p>
-            <div class="last-icon">
-                <i class="fas fa-quote-right"></i>
-            </div>
-        </div>
-    </div>
-@endsection
-
-@section('latest news title')
-    <h3><span class="orange-text">Série</span> Tendances</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, fuga quas itaque eveniet beatae optio.</p>
-@endsection
-
-@section('latest news content')
-    <div class="col-lg-4 col-md-6">
-        <div class="single-latest-news">
-                <a href="#"><div><img class="latest-news-bg news-bg-1" src="{{asset('assets/img/avaters/friendds.jpg')}}" alt="""></img></div></a>
-                <div class="news-text-box">
-                    <h3><a href="#">Série Friends</a></h3>
-                    <p class="blog-meta">
-                        <span class="author"><i class="fas fa-user"></i> Laubert Pascal</span>
-                        <span class="date"><i class="fas fa-calendar"></i> 27 December, 1994</span>
-                    </p>
-                    <p class="excerpt">Vivamus lacus enim, pulvinar vel nulla sed, scelerisque rhoncus nisi. Praesent vitae mattis nunc, egestas viverra eros.</p>
-                    <a href="#" class="read-more-btn">Voir les épisodes <i class="fas fa-angle-right"></i></a>
+            <div class="client-meta">
+                <p class="testimonial-body">
+                    {{ $media->titre }} <br>
+                    {{ $media->annee }}
+                </p>
+                <div class="last-icon">
+                    <i class="fas fa-quote-right"></i>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="col-lg-4 col-md-6">
-        <div class="single-latest-news">
-            <a href="#"><div><img class="latest-news-bg news-bg-1" src="{{asset('assets/img/avaters/americans.jpg')}}" alt="""></img></div></a>
-            <div class="news-text-box">
-                <h3><a href="#">American's Pie</a></h3>
-                <p class="blog-meta">
-                    <span class="author"><i class="fas fa-user"></i>Alfa Roman</span>
-                    <span class="date"><i class="fas fa-calendar"></i> 27 Decembre, 2006</span>
-                </p>
-                <p class="excerpt">Vivamus lacus enim, pulvinar vel nulla sed, scelerisque rhoncus nisi. Praesent vitae mattis nunc, egestas viverra eros.</p>
-                <a href="#" class="read-more-btn">Voir les épisodes <i class="fas fa-angle-right"></i></a>
+    @endforeach
+@endsection
+
+@section('latest news title')
+    <h3><span class="orange-text">Playlists</span> Tendances</h3>
+    <p>Découvrez les playlists de la communauté ImtFlix
+@endsection
+
+@section('latest news content')
+    @foreach($playlists_populaires as $playlist)
+        <div class="col-lg-4 col-md-6">
+            <div class="single-latest-news">
+                    <div class="news-text-box">
+                        <h3><a href="#">{{ $playlist->nom_playlist }}</a></h3>
+                        <p class="blog-meta">
+                            <span class="author"><i class="fas fa-user"></i>{{ $playlist->name }} </span>
+                            <span class="date"><i class="fas fa-calendar"></i> {{ substr($playlist->updated_at,0,10) }}</span>
+                            <span class="date"><i class="fas fa-heart"></i> {{ $playlist->count }}</span>
+                        </p>
+                        <a href="#" class="read-more-btn">Détails <i class="fas fa-angle-right"></i></a>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="col-lg-4 col-md-6">
-        <div class="single-latest-news">
-            <a href="#"><div><img class="latest-news-bg news-bg-1" src="{{asset('assets/img/avaters/howimet.jpg')}}" alt="""></img></div></a>
-            <div class="news-text-box">
-                <h3><a href="#">How i met your mother</a></h3>
-                <p class="blog-meta">
-                    <span class="author"><i class="fas fa-user"></i>Alfa Roman</span>
-                    <span class="date"><i class="fas fa-calendar"></i> 27 Decembre, 2006</span>
-                </p>
-                <p class="excerpt">Vivamus lacus enim, pulvinar vel nulla sed, scelerisque rhoncus nisi. Praesent vitae mattis nunc, egestas viverra eros.</p>
-                <a href="#" class="read-more-btn">Voir les épisodes <i class="fas fa-angle-right"></i></a>
-            </div>
-        </div>
-    </div>
+    @endforeach
 @endsection
 

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Categorie;
+use App\Models\Media;
+use App\Models\Playlist;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
@@ -24,7 +26,10 @@ class listeMediasController extends Controller
     function afficherAccueil(){
         $userRole = User::user_role(); 
         $categories = Categorie::all();
-        return view('listeMedias',compact('categories','userRole'));
+        $medias_recents = Media::medias_recents();
+        $medias_populaires = Media::medias_populaires();
+        $playlists_populaires = Playlist::playlists_populaires();
+        return view('listeMedias',compact('categories','userRole','medias_recents','medias_populaires','playlists_populaires'));
     }
     /* connextion */
 

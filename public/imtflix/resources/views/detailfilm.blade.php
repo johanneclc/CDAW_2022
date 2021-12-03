@@ -5,17 +5,19 @@
         <div class="col-4">
             <img src="{{ $media->image }}" alt="">
         </div>
-        <form action="{{url('addLike')}}">
-
-                        <textarea name="id" style="display:none">
-                        <?php echo $media->id_media; ?></textarea>
-                        
-                        <button class="btn btn-primary" type="submit">Like</button>
-        </form>
+        
         <div class="col-8">
             <h2 class="text-white text-left">{{ $media->titre }}</h2>
             <p class="text-white text-left">{{ $media->annee }}</p>
             <span> {{ $media->description }}</span>
+            <form action="{{url('addLike')}}">
+            <textarea name="id" style="display:none">
+            <?php echo $media->id_media; ?></textarea>
+            
+            @if($userRole['role']!=0)
+                <button class="btn btn-primary" type="submit">Like</button>
+            @endif
+        </form>
             <ul class="list-group list-group-flush">
                 @if (count($media->comments))
                     @foreach ($media->comments as $comment)
@@ -25,7 +27,7 @@
                                 <form action="{{ route('comments.destroy', $comment->id) }}" method="post">
                                     @csrf
                                     @method('delete')
-                                    @if($comment->user->id == $userRole["user"]->id)
+                                    @if($comment->user->id == $userRole['role']["user"]->id)
                                         <button type="submit" class="btn btn-link text-danger text-right">Delete</button>
                                     @endif
                                 </form>
@@ -36,11 +38,13 @@
                         No comments!
                 @endif
             </ul>
-            <form action="{{ url('/movies/'.$media->id_media.'/comments') }}" method="POST">
-                @csrf
-                <input type="text" name="comment" class="form-control" placeholder="say something...">
-                <button type="submit" class="btn btn-primary mt-2 float-right">Comment</button>
-            </form>
+            @if($userRole['role']!=0)
+                <form action="{{ url('/movies/'.$media->id_media.'/comments') }}" method="POST">
+                    @csrf
+                    <input type="text" name="comment" class="form-control" placeholder="say something...">
+                    <button type="submit" class="btn btn-primary mt-2 float-right">Comment</button>
+                </form>
+            @endif
         </div>
     </div>
 

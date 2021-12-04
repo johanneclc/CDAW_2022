@@ -100,11 +100,10 @@ class listeMediasController extends Controller
          }
     }
 
-    public function destroy(User $user)
+    public function destroy(Request $request)
     {
         Auth::logout();
-        $userRole = User::user_role(); 
-        return redirect('accueil',compact('userRole'));
+        return redirect('/');
     }
 
 }

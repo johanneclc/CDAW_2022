@@ -5,17 +5,16 @@
         <div class="col-4">
             <img src="{{ $media->image }}" alt="">
         </div>
-        <form action="{{url('addLike')}}">
-
-                        <textarea name="id" style="display:none">
-                        <?php echo $media->id_media; ?></textarea>
-                        
-                        <button class="btn btn-primary" type="submit">Like</button>
-        </form>
+        
         <div class="col-8">
             <h2 class="text-white text-left">{{ $media->titre }}</h2>
             <p class="text-white text-left">{{ $media->annee }}</p>
             <span> {{ $media->description }}</span>
+            <form action="{{url('addLike')}}">
+                        <textarea name="id" style="display:none">
+                        <?php echo $media->id_media; ?></textarea>
+                        <button class="btn btn-primary" type="submit">Like</button>
+            </form>
             <ul class="list-group list-group-flush">
                 @if (count($media->comments))
                     @foreach ($media->comments as $comment)

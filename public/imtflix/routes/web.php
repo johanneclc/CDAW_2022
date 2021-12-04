@@ -71,7 +71,7 @@ Route::post('/register',
             'App\Http\controllers\listeMediasController@postRegister')->name('register');
 
 // Deconnexion
-Route::post('/users/deconnexion',
+Route::get('/deconnexion',
 'App\Http\controllers\listeMediasController@destroy')->name('deconnexion');
 
 Route::post('/movies/{medias:id}/cast_store', [MediasController::class, 'movie_cast_store'])->name('movie_cast_store');

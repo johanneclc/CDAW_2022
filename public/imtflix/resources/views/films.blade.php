@@ -1,7 +1,11 @@
-@extends('templateAccueil',['categories' => $categories])
+@extends('templateAccueil')
 
 @section('content')
-    <h1>Bienvenue {{$user->name}}</h1><br>
+    <h1>Bienvenue 
+        @if($userRole!=0)
+            {{$userRole["name"]}}
+        @endif
+    </h1><br>
     <h3 class="text-white">Ici, retrouvez une grande selection de films !!!</h3><br>
 @endsection
 

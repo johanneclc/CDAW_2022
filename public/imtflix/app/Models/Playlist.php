@@ -39,4 +39,13 @@ class Playlist extends Model
     static function creations(){
         return DB::table('playlists')->where('id_utilisateur',Auth::user()->id)->get();
     }
+    static function playlists_populaires(){
+        return DB::table('playlists')
+            ->select(DB::raw('playlists.*,users.*, count(abonnements.id_utilisateur) as count'))
+            ->join('abonnements','abonnements.id_playlist','playlists.id_playlist')
+            ->join('users','users.id','playlists.id_utilisateur')
+            ->groupBy('abonnements.id_playlist')
+            ->take(6)
+            ->get();
+    }
 }

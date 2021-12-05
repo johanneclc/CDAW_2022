@@ -93,6 +93,7 @@ class listeMediasController extends Controller
                 'email' => $data['email'],
                 'password' => Hash::make($data['password']),
                 'chemin_avatar' => $data['chemin_avatar'],
+                'id_role_utillisateur'=> 3,
             ]);
             $userRole = User::user_role(); 
 

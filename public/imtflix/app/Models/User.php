@@ -62,7 +62,7 @@ class User extends Authenticatable
         elseif (Auth::user()->id_role_utilisateur==2) {
             return ['role'=>2, 'name'=>Auth::user()->name,'user'=>Auth::user()] ;
         }
-        elseif (Auth::user()->id_role_utilisateur==2) {
+        elseif (Auth::user()->id_role_utilisateur==3) {
             return ['role'=>3, 'name'=>Auth::user()->name,'user'=>Auth::user()] ;
         }
         return ['role'=>4, 'name'=>Auth::user()->name,'user'=>Auth::user()] ; 

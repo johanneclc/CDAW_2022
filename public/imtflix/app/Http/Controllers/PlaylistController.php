@@ -103,6 +103,7 @@ class PlaylistController extends Controller
         return view('playlist',compact('medias','playlist','userRole'));
 
     }
+    postPlaylists
 
 
 }

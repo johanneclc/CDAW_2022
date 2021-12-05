@@ -38,6 +38,9 @@ Route::get('/playlists',
 Route::get('/playlists/{playlist}',
             'App\Http\controllers\PlaylistController@afficherPlaylist')->name('playlist');
 
+Route::post('/playlistss',
+            'App\Http\controllers\PlaylistController@postPlaylists')->name('playlistss');
+
 // Profil Utilisateur
 Route::get('/mon_profil', 'App\Http\controllers\userController@afficherMonProfil')->name('mon_profil');
 Route::put('/modifier_profil','App\Http\controllers\userController@update')->name('modifier_profil');

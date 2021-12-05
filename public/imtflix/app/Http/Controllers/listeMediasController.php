@@ -59,23 +59,6 @@ class listeMediasController extends Controller
     }
 
     function postRegister(Request $request){
-        // $request->validate([
-        //     'name' => 'required',
-        //     'email' => 'required',
-        //     'password' => 'required',
-        //     'chemin_avatar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        // ]);
-  
-        // $input = $request->only('name','email',Hash::make($data['password']),'chemin_avatar');
-  
-        // if ($chemin_avatar = $request->file('chemin_avatar')) {
-        //                 $destinationPath = 'chemin_avatar/';
-        //                 $profileImage = date('YmdHis') . "." . $chemin_avatar->getClientOriginalExtension();
-        //                 $chemin_avatar->move($destinationPath, $profileImage);
-        //                 $input['chemin_avatar'] = "$profileImage";
-        // }
-        // User::create($input);
-        // return view('login');
 
         $data = $request->all();
 

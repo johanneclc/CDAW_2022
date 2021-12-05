@@ -15,6 +15,13 @@
             <img src="{{ $film->image }}" alt="">
             <h3>{{ $film->titre }}</a></h3>
             <a href="films/{{ $film->id_media }}" class="cart-btn">Détails</a>
+
+            <form method="POST" action="{{ route('playlistss') }}">
+            <a href="films/{{ $film->id_media }}" class="cart-btn">playlists</a>
+            </form>
+
+            <img src="{{asset('assets/img/coeur.png')}}" width="20px" alt="Ajouter à votre playlist">
+
         </div>
     @endforeach
 @endsection

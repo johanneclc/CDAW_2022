@@ -30,8 +30,8 @@
                                 <form action="{{ route('comments.destroy', $comment->id) }}" method="post">
                                     @csrf
                                     @method('delete')
-                                    @if($comment->user->id == $userRole["user"]->id)
-                                        <button type="submit" class="btn btn-link text-danger text-right">Delete</button>
+                                    @if($comment->user->id == $userRole["user"]->id || $userRole["user"]->id ==2)
+                                        <button type="submit" class="btn btn-link text-danger text-right">Supprimer</button>
                                     @endif
                                 </form>
                             @endauth

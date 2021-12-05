@@ -13,10 +13,9 @@ class Media extends Model
 
     protected $table = 'medias';
     protected $primaryKey = 'id_media';
-    protected $fillable = ['rating_star'];
 
     protected $guarded = [
-        'created_at','update_at','rating_star'
+        'created_at','update_at'
     ];
     public function categories()
     {

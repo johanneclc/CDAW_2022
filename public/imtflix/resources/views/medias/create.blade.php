@@ -59,7 +59,7 @@
                         <input class="form-check-input" type="checkbox" id="cat_{{ $categorie->id_categorie }}"
                         value="{{ $categorie->id_categorie }}" name="{{ $categorie->id_categorie }}">
                         <label class="form-check-label text-white" for="cat_{{ $categorie->id_categorie }}">
-                            {{ $categorie->name }}
+                            {{ $categorie->nom_categorie }}
                         </label>
                       </div>
                     @endforeach
